@@ -250,7 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
     var response = await http.get(url);
     //print('Response status: ${response.statusCode}');
     // print('Response body: ${response.body}');
-    if (response.body.contains("Login")){
+    if (response.body.contains("Login successful")){
       saveEmail();
 
       Navigator.push(context,
@@ -259,7 +259,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     else{
-      _showSnackBar("Login Failed");
+      _showSnackBar("Invalid Username or Password Please Try Again");
 
     }
   }

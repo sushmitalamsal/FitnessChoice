@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class KetoMonday extends StatelessWidget {
+class KetoWednesday extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Monday Diet"),
+        title: Text("Wednesday Diet"),
         backgroundColor: Color(0xFF21BFBD),
       ),
       body: Container(
@@ -14,42 +14,40 @@ class KetoMonday extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.topLeft,
+              child: Container(
+                alignment: Alignment.topLeft,
                   child: Column(
                     children: <Widget>[
-                    Text("Breakfast: ",
-                    style: GoogleFonts.oswald(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+                      Text("BREAKFAST", style: GoogleFonts.oswald(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
 
-                    ),),
+                      ),),
 
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Container(
-                      alignment: Alignment.topLeft,
-                      child: Column(
-                        children: <Widget>[
-                          Text("Keto Yogurt Granola Pafait Bowl", style: TextStyle(
-                            fontSize: 20,
-                          ),)
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: <Widget>[
+                              Text("Mushroom and Broccoli Omlet", style: TextStyle(
+                                fontSize: 20,
+                              ),)
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
 
 
-                  Container(
-                    height: MediaQuery.of(context).size.height / 3,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/images/mondbreak.png"),
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/wedbreak.jpg"),
 
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-
 
                       Container(
                         alignment: Alignment.topLeft,
@@ -66,20 +64,19 @@ class KetoMonday extends StatelessWidget {
                         ),
                       ),
 
-
                       Container(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("1. 8-10  large eggs \n "
-                                  "2. 1 teaspoons sea salt \n "
-                                  "3. 1/4 teaspoon black pepper \n"
-                                  "4. 1/3 cup sun dried tomatoes chopped\n"
-                                  "5. 3/4 cup spinach chopped \n"
-                                  "6. 1/4 cup fresh basil chopped or chiffoned\n"
-                                  "7. 1 cup Parmesan cheese grated\n   " , style: TextStyle(
+                              Text("1. 5 mushrooms \n "
+                                  "2. 2 tablespoons of vegetable oil \n "
+                                  "3. 5 eggs \n"
+                                  "4. Salt \n"
+                                  "5. 5 ounces of boiled broccoli \n"
+                                  "6. Chilli Flakes\n"
+                                 , style: TextStyle(
                                 fontSize: 20,
 
                               ),)
@@ -94,7 +91,8 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("INSTRUCTIONS:" , style: TextStyle(
+                              Text("INSTRUCTIONS: \n"
+                                  "For 2 servings" , style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),)
@@ -110,13 +108,13 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("1. Preheat oven to 400 F.\n \n "
-                                  "2. Get a 12 count muffin tin, and line with silicone liners, "
-                                  "or use a silicone muffin pan. Or coat a regular muffin pan with non-stick cooking spray. Set aside.\n \n"
-                                  "3. In a large mixing bowl, crack in eggs and whisk together with salt and black pepper. \n \n"
-                                  "4. Add in all other ingredients \n \n"
-                                  "5. Divide evenly into muffin tins filling 2/3 full. Top with additional parmesan cheese.\n \n"
-                                  "6. Bake in preheated oven for 12-15 minutes, or until set.\n \n" ,  textAlign: TextAlign.justify,style:
+                              Text("1. Slice the mushrooms.\n \n "
+                                  "2. Whisk the eggs in a small bowl\n \n"
+                                  "3. Separately, heat a skillet, add 1 tablespoon vegetable oil and begin cooking the whisked eggs.\n \n"
+                                  "4. Cook them until the omelet reaches the consistency desired (preferably 1-2 minutes). \n \n"
+                                  "5. Bring a large pot of water to a boil and cook the broccoli for 2 minutes.\n \n"
+                                  "6. In another skillet, add the remaining oil and add your mushrooms. Season with salt and add the boiled broccoli.\n \n"
+                                  "7.  Let them cook for another 30 seconds. Add them on top of the omelet and sprinkle with some chili flakes.",  textAlign: TextAlign.justify,style:
                               TextStyle(fontSize: 20,
                                 wordSpacing: 2.0,
                               ),
@@ -149,12 +147,10 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("Net carbs per serving: 11.6g \n"
-                                  "Calories: 93 kcal \n"
-                                  "Fat: 5g \n"
-                                  "Carbhohydrates: 2g \n"
-                                  "Calcium: 125mg \n"
-                                  "Protein: 8g  \n \n" , style: TextStyle(
+                              Text("Net carbs : 19g \n"
+                                  "Calories: 230 kcal \n"
+                                  "Fat: 10g \n"
+                                  "Protein: 7g  \n \n" , style: TextStyle(
                                 fontSize: 20,
 
                               ),)
@@ -162,7 +158,6 @@ class KetoMonday extends StatelessWidget {
                           ),
                         ),
                       ),
-
 
                       Container(
 
@@ -180,14 +175,13 @@ class KetoMonday extends StatelessWidget {
                         ),
                       ),
 
-
                       Container(
 
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("Cauliflower and Bacon Soup" ,
+                              Text("Avocado Egg Salad" ,
                                 style: TextStyle(
                                   fontSize: 20,
 
@@ -197,14 +191,11 @@ class KetoMonday extends StatelessWidget {
                         ),
                       ),
 
-
-
-
                       Container(
                         height: MediaQuery.of(context).size.height / 3,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/images/mondlunch.png"),
+                            image: AssetImage("assets/images/wedlunch.png"),
 
 
                           ),
@@ -218,11 +209,12 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("INGREDIENTS:  "
-                                  , style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),)
+                              Text("INGREDIENTS: \n"
+                                  "For 2 Servings \n  "
+                                , style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),)
                             ],
                           ),
                         ),
@@ -234,12 +226,15 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("1. 16 slices bacon\n  "
-                                  "2. 2 lbs = 900 g cauliflower, chopped\n  "
-                                  "3. 1 large onion, chopped (30 g/ 1.1 oz)\n "
-                                  "4. 3 cups = 700 ml chicken stock OR bone broth OR vegetable stock \n "
-                                  "5. 8 oz = 230 g full-fat cream cheese\n "
-                                  "6. Optional: natural salt and freshly ground black pepper \n  " , style: TextStyle(
+                              Text("1. 1 large avocado, peeled, pitted and finely diced\n  "
+                                  "2. 3 hard boiled eggs, roughly chopped\n  "
+                                  "3. 2 tbsp red onion, chopped\n "
+                                  "4. 2 tbsp mayonnaise \n "
+                                  "5. 1 tbsp chives, chopped\n "
+                                  "6. 1 tbsp parsley, chopped \n"
+                                  "7. 1 tsp lemon juice\n"
+                                  "8. salt and pepper \n "
+                                  "9. lettuce leaves, optional, for serving \n " , style: TextStyle(
                                 fontSize: 20,
 
                               ),)
@@ -263,19 +258,15 @@ class KetoMonday extends StatelessWidget {
                         ),
                       ),
 
+
                       Container(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("1. Fry the bacon until crispy. Reserve the bacon fat. When it’s cool enough to handle, crumble the bacon and set aside \n \n"
-                                  "2. Combine the cauliflower, onion and stock/broth in a large saucepan. \n \n"
-                                  "3. Cook, covered, until the onion and cauliflower are soft and tender, about 15 minutes. \n \n"
-                                  "4. Add the cream cheese and the bacon grease. \n \n"
-                                  "5. Puree the soup with an immersion blender, or in batches in a blender until smooth and velvety. (Be careful with the hot soup!) n"
-                                  "6. Taste test, and add salt and pepper if wished. Divide the soup between 4 serving bowls. \n \n"
-                                  "7. Sprinkle a quarter of the bacon on top of each serving. Serve immediately. \n",  textAlign: TextAlign.justify,style:
+                              Text("1. Add all of the ingredients to a mixing bowl and stir to combine. \n \n"
+                                  "2. Eat the avocado egg salad plain, topped on your favorite bread or on lettuce leaves. \n \n" ,  textAlign: TextAlign.justify,style:
                               TextStyle(fontSize: 20,
                                 wordSpacing: 2.0,
                               ),
@@ -285,7 +276,6 @@ class KetoMonday extends StatelessWidget {
                           ),
                         ),
                       ),
-
 
                       Container(
                         alignment: Alignment.topLeft,
@@ -309,20 +299,21 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("Net carbs : 32.4g, per serving: 8.1g\n"
-                                  "Calories: 2507kcal, per serving: 627kcal \n"
-                                  "Fat: 216.5g, per serving: 36.1g\n"
-                                  "Protein: 107g, per serving: 26.7g \n"
-                                  , style: TextStyle(
-                                fontSize: 20,
+                              Text(
+                                  "Calories: 323.7kcal \n"
+                                  "Fat: 28.2g\n"
+                                  "Protein: 11g \n"
+                                      "Fiber: 4.8g \n"
+                                      "Carbhohydrate: 8.1g \n"
+                                , style: TextStyle(
+                                  fontSize: 20,
 
 
-                              ),)
+                                ),)
                             ],
                           ),
                         ),
                       ),
-
 
 
                       Container(
@@ -348,7 +339,7 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("Stir-fried chicken, broccoli, mushrooms, and peppers" ,
+                              Text("Spicy Chicken with Cauliflower Rice" ,
                                 style: TextStyle(
                                   fontSize: 20,
 
@@ -363,7 +354,7 @@ class KetoMonday extends StatelessWidget {
                         height: MediaQuery.of(context).size.height / 3,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/images/monddinner.png"),
+                            image: AssetImage("assets/images/weddinner.png"),
 
 
                           ),
@@ -377,7 +368,8 @@ class KetoMonday extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("INGREDIENTS:   ", style: TextStyle(
+                              Text("INGREDIENTS: \n"
+                                  "For 6 Servings   ", style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),)
@@ -387,23 +379,29 @@ class KetoMonday extends StatelessWidget {
                       ),
 
 
-
                       Container(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text("1. 2 medium zucchini - spiralized or julienne peeled\n "
-                                  "2. 1/2 Lb raw shrimp - peeled \n "
-                                  "3. 3 garlic cloves - finely diced\n"
-                                  "4. 2 Tbsp - Olive Oil\n"
-                                  "5. 3 Tbsp - Salted butter - softened\n"
-                                  "6. 1/2 Lemon - Juice and zest\n  "
-                                  "7. 1/4 cup vegetable or chicken stock\n"
-                                  "8. 1/2 tsp Paprika\n"
-                                  "9.Small handful of chopped parsley (reserve some for garnish) \n"
-                                  "10. Salt and black pepper  \n",
+                              Text("For the Chicken \n"
+                                  "1.  6 boneless skinless chicken thighs\n "
+                                  "2. 1 teaspoon dried oregano\n "
+                                  "3.  ½ tablespoon paprika\n"
+                                  "4. 1 teaspoon garlic powder\n"
+                                  "5. ½ teaspoon chilli powder\n"
+                                  "6. ½ teaspoon cumin\n  "
+                                  "7. Salt and black pepper \n"
+                                  "8. 2 tablespoons olive oil\n \n"
+                                  "For the Cauliflower Rice\n"
+                                  "1. 1 medium cauliflower head \n "
+                                  "2. 1 cup onion — chopped\n"
+                                  "3.  4 garlic cloves — minced \n"
+                                  "4. 1/4 cup chicken broth \n"
+                                  "5. 1 tablespoon hot sauce — any you prefer \n"
+                                  "6. ½ cup fresh chopped parsley \n"
+                                  "7. 1 tablespoon lemon juice \n",
                                 style: TextStyle(
                                   fontSize: 20,
 
@@ -429,21 +427,24 @@ class KetoMonday extends StatelessWidget {
                         ),
                       ),
 
+
                       Container(
                         alignment: Alignment.topLeft,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: <Widget>[
-                              Text( "1. Use a spiralizer or julienne peeler to prepare your zucchini noodles. (Optional) for a firmer end result, sprinkle the spiralized zucchini with salt and "
-                                  "mix well in a colander. Leave for 5 minutes then press firmly to remove excess moisture. Rinse and drain well before using. \n \n"
-                                  "2. Heat oil and half of the butter in a heave based skillet on high to medium heat. Add shrimp to pan and saute for one minute. \n \n "
-                                  "3. Add garlic, paprika, salt and pepper and saute for another 2 minutes until shrimp is cooked through, stirring well. \n \n"
-                                  "4. Set aside shrimp, in the same pan add the lemon juice and stock and stir well to de-glaze any browning stuck to the bottom"
-                                  " of the pan. Stir for two to three minutes until the sauce starts to thicken  \n \n "
-                                  "5. Add in the zucchini, stirring well and cooking for 2 minutes until done. \n \n"
-                                  "6. Take the pan off the heat, add in the shrimp, the remaining butter, a big pinch"
-                                  " of lemon zest and parsley. Stir well to melt the butter and serve immediately, enjoy! \n ",  textAlign: TextAlign.justify,style:
+                              Text( "1. In a large bowl, arrange chicken thighs and sprinkle with all the seasonings (except the olive oil) for the chicken"
+                                  " ingredients. Mix everything well and marinate for 15-30 minutes (or over night) \n \n."
+                                  "2. While marinating chicken, make cauliflower rice by pulsing the cauliflower florets in a food processor for about 25-30 "
+                                  "seconds until you obtain a rice-like consistency. Set aside. \n \n"
+                                  "3. In a large skillet, add olive oil over medium-high heat. When the pan smokes just a bit, it’s a sign that it’s properly "
+                                  "heated. Place the chicken skin side down, reduce the heat to medium and cook for about 4 – 5 minutes on each side or until"
+                                  " chicken reaches 165°F (75°C). Set chicken aside on a plate. \n \n"
+                                  "4. In the same pan, add garlic and onion and sauté for 1 minute until the onions become golden brown. Add the hot sauce and"
+                                  "mix well. Add the riced cauliflower and mix everything together. Pour the chicken stock over the cauliflower rice add parsley "
+                                  "and lemon juice. Cook for 2 or 3 minutes until the cauliflower gets tender. 5. Adjust seasoning as needed. Return chicken thighs"
+                                  " over cauliflower rice and reheat quickly. Enjoy! \n \n",  textAlign: TextAlign.justify,style:
                               TextStyle(fontSize: 20,
                                 wordSpacing: 2.0,
                               ),
@@ -478,11 +479,13 @@ class KetoMonday extends StatelessWidget {
                           child: Column(
                             children: <Widget>[
                               Text(
-                                  "Calories: 406 kcal \n"
-                                  "Fat: 33g \n"
-                                  "Protein: 18g \n"
-                                  "Carbohydrates: 40mg \n "
-                                  "Cholesterol: 211mg" , style: TextStyle(
+                                "Calories: 222 kcal \n"
+                                    "Fat: 12g \n"
+                                    "Protein: 22g \n"
+                                    "Carbohydrates: 10mg \n "
+                                    "Fiber: 4g \n"
+                                    "Sugar: 3g \n"
+                                    "Cholesterol: 100mg" , style: TextStyle(
                                 fontSize: 20,
 
 
@@ -502,13 +505,15 @@ class KetoMonday extends StatelessWidget {
 
 
 
-                    ]
-                  ),
+                    ],
+                  )
+              ),
             )
-           ),
           ],
         ),
       ),
+
+
     );
   }
 }

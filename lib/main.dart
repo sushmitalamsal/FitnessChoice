@@ -1,6 +1,6 @@
-
 import 'dart:async';
 import 'package:fitness_choice/Diet.dart';
+import 'package:fitness_choice/Exercise/weight_loss.dart';
 import 'package:fitness_choice/HomePage.dart';
 import 'package:fitness_choice/Screens/aboutus_screen.dart';
 import 'package:fitness_choice/Screens/background.dart';
@@ -12,34 +12,39 @@ import 'package:fitness_choice/Screens/login_screen.dart';
 import 'package:fitness_choice/Screens/profile_screen.dart';
 import 'package:fitness_choice/Screens/signup_screen.dart';
 import 'package:fitness_choice/Screens/splash_screen.dart';
-import 'package:fitness_choice/Screens/workouts.dart';
+import 'package:fitness_choice/Screens/workouts_screen.dart';
 import 'package:fitness_choice/contants/urls.dart';
+import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: 'splash',
-
-      routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        'splash': (context) => SplashScreen(),
-        'background': (context) => Background(),
-        'login': (context) => LoginScreen(),
-        'signup': (context) => SignupScreen(),
-        'home': (context) => HomePage(),
-        DIET_SCREEN: (context) => Diet(),
-        BMI_SCREEN: (context) => BmiCalculator(),
-        WORKOUTS_SCREEN: (context) => Workouts(),
-        DRINKWATER_SCREEN: (context) => DrinkWater(),
-        PROFILE_SCREEN: (context) => ProfileScreen(),
-        ABOUTUS_SCREEN: (context) => AboutUs(),
-
-      },
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: DrinkWaterProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: 'splash',
+        routes: {
+          // When navigating to the "/" route, build the FirstScreen widget.
+          'splash': (context) => SplashScreen(),
+          'background': (context) => Background(),
+          'login': (context) => LoginScreen(),
+          'signup': (context) => SignupScreen(),
+          'home': (context) => HomePage(),
+          DIET_SCREEN: (context) => Diet(),
+          BMI_SCREEN: (context) => BmiCalculator(),
+          WORKOUTS_SCREEN: (context) => Workouts(),
+          DRINKWATER_SCREEN: (context) => DrinkWater(),
+          WEIGHT_LOSS: (context) => WeightLoss(),
+          //PROFILE_SCREEN: (context) => ProfileScreen(),
+          //ABOUTUS_SCREEN: (context) => AboutUs(),
+        },
+      ),
     ),
   );
 }
-
-

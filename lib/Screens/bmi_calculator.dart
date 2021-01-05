@@ -31,7 +31,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Color(0xFF21BFBD),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

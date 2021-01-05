@@ -6,7 +6,7 @@ class KetoSunday extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
       title: Text("Sunday Diet"),
-      backgroundColor: Colors.cyan,
+      backgroundColor: Color(0xFF21BFBD),
     ),
       body: Container(
         child: ListView(

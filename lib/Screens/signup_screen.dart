@@ -274,7 +274,7 @@ class _SignupScreenState extends State<SignupScreen> {
     var response = await http.get(url);
     // print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
-    if (response.body.contains("Registration")) {
+    if (response.body.contains("Registration Successful")) {
       saveEmail();
 
       Navigator.push(context,
@@ -284,7 +284,7 @@ class _SignupScreenState extends State<SignupScreen> {
     }
 
     else {
-      _showSnackBar("Registration Failed");
+      _showSnackBar("Something is wrong");
     }
   }
 

@@ -19,7 +19,7 @@ class _DietState extends State<Diet> {
 
   ];
 
-  double _targetCalories = 2250;
+ // double _targetCalories = 2250;
   String _diet = 'Ketogenic';
 
 
@@ -65,38 +65,38 @@ class _DietState extends State<Diet> {
                         .body1
                         .copyWith(fontSize: 25),
                     children: [
-                      TextSpan(
-                        text: _targetCalories.truncate().toString(),
-                        style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      TextSpan(
-                        text: ' cal',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      // TextSpan(
+                      //   text: _targetCalories.truncate().toString(),
+                      //   style: TextStyle(
+                      //     color: Theme.of(context).primaryColor,
+                      //     fontWeight: FontWeight.bold,
+                      //   ),
+                      // ),
+                      // TextSpan(
+                      //   text: ' cal',
+                      //   style: TextStyle(
+                      //     fontWeight: FontWeight.w600,
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
-                SliderTheme(
-                  data: SliderTheme.of(context).copyWith(
-                    thumbColor: Theme.of(context).primaryColor,
-                    activeTrackColor: Theme.of(context).primaryColor,
-                    inactiveTrackColor: Colors.lightBlue[100],
-                    trackHeight: 6.0,
-                  ),
-                  child: Slider(
-                    min: 0.0,
-                    max: 4500.0,
-                    value: _targetCalories,
-                    onChanged: (value) => setState(() {
-                      _targetCalories = value.round().toDouble();
-                    }),
-                  ),
-                ),
+                // SliderTheme(
+                //   data: SliderTheme.of(context).copyWith(
+                //     thumbColor: Theme.of(context).primaryColor,
+                //     activeTrackColor: Theme.of(context).primaryColor,
+                //     inactiveTrackColor: Colors.lightBlue[100],
+                //     trackHeight: 6.0,
+                //   ),
+                //   child: Slider(
+                //     min: 0.0,
+                //     max: 4500.0,
+                //     value: _targetCalories,
+                //     onChanged: (value) => setState(() {
+                //       _targetCalories = value.round().toDouble();
+                //     }),
+                //   ),
+                // ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30.0),
                   child: DropdownButtonFormField(
@@ -114,7 +114,7 @@ class _DietState extends State<Diet> {
                     }).toList(),
                     decoration: InputDecoration(
                       labelText: 'Diet',
-                      labelStyle: TextStyle(fontSize: 25.0),
+                      labelStyle: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
 
                     ),
                     onChanged: (value) {

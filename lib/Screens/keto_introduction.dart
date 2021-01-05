@@ -6,7 +6,7 @@ class KetoIntroduction extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Keto Introduction"),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Color(0xFF21BFBD),
       ),
       
       body: Container(

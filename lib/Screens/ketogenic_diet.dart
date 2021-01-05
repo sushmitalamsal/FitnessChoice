@@ -1,7 +1,10 @@
 import 'package:fitness_choice/Screens/keto_introduction.dart';
+import 'package:fitness_choice/Weeks/keto_friday.dart';
 import 'package:fitness_choice/Weeks/keto_monday.dart';
 import 'package:fitness_choice/Weeks/keto_sunday.dart';
+import 'package:fitness_choice/Weeks/keto_thursday.dart';
 import 'package:fitness_choice/Weeks/keto_tuesday.dart';
+import 'package:fitness_choice/Weeks/keto_wednesday.dart';
 import 'package:flutter/material.dart';
 
 class KetogenicDiet extends StatelessWidget {
@@ -10,7 +13,7 @@ class KetogenicDiet extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Ketogenic Diet"),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Color(0xFF21BFBD),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
@@ -115,13 +118,24 @@ class KetogenicDiet extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: const Center(child: Text('Wednesday', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),)),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(child: Text('Wednesday', style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),)),
+
+                ),
+
+
+
+              onTap: (){
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => KetoWednesday()));
+              },
 
               ),
             ),
@@ -129,13 +143,23 @@ class KetogenicDiet extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: const Center(child: Text('Thursday', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),)),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(child: Text('Thursday', style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),)),
+
+                ),
+
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => KetoThursday()));
+                },
+
 
               ),
             ),
@@ -143,29 +167,44 @@ class KetogenicDiet extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: const Center(child: Text('Friday', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(child: Text('Friday', style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
 
-                ),)),
+                  ),)),
 
+                ),
+
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => KetoFriday()));
+                },
               ),
             ),
 
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                color: Colors.white,
-                child: const Center(child: Text('Saturday', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(child: Text('Saturday', style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
 
-                ),)),
+                  ),)),
 
+                ),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => KetoWednesday()));
+                },
               ),
             ),
 
