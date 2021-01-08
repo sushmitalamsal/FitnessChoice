@@ -10,12 +10,14 @@ class WalkingHighKnees extends StatelessWidget {
           backgroundColor: Color(0xFF21BFBD),
         ),
         body: Container(
+
             child: ListView(
                 children: <Widget>[
                   Padding(
                       padding: const EdgeInsets.all(8.0),
 
                       child: Container(
+
                           alignment: Alignment.topLeft,
                           child: Column(
                               children: <Widget>[

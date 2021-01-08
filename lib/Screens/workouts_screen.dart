@@ -10,7 +10,7 @@ class Workouts extends StatelessWidget {
           backgroundColor:Color(0xFF21BFBD),
         ),
         body: Container(
-          height: MediaQuery.of(context).size.height - 80.0,
+          height: MediaQuery.of(context).size.height - 50.0,
           decoration: BoxDecoration(
             //color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -45,8 +45,8 @@ class Workouts extends StatelessWidget {
 
   Items(String title, String imgPath, BuildContext context, String pageName) {
     return Card(
-     elevation: 16.0,
-     margin: EdgeInsets.all(8.0),
+      elevation: 16.0,
+      margin: EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, pageName);
@@ -69,12 +69,12 @@ class Workouts extends StatelessWidget {
                 child: Card(
                   margin: EdgeInsets.all(20),
                   child: Image(
-                      image: AssetImage(imgPath),
-                      fit:  BoxFit.cover,
-                      height:170,
-                      width:200,
-                      ),
-              ),
+                    image: AssetImage(imgPath),
+                    fit:  BoxFit.cover,
+                    height:170,
+                    width:200,
+                  ),
+                ),
               ),
               SizedBox(
                 height: 20,

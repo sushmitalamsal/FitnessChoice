@@ -4,48 +4,57 @@ class CupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 2,
-        mainAxisSpacing: 18,
-        crossAxisSpacing: 18,
-        childAspectRatio: 0.85,
+        crossAxisCount: 2,
+        mainAxisSpacing: 50,
+        crossAxisSpacing: 50,
+        childAspectRatio: 1,
+        padding: const EdgeInsets.all(16),
+        children: <Widget>[
+          CupWidget(cupImage: "assets/images/100ml.png", water: "100",),
+          CupWidget(cupImage: "assets/images/200ml.png", water: "200",),
+          CupWidget(cupImage: "assets/images/300ml.png", water: "300",),
+          CupWidget(cupImage: "assets/images/400ml.png", water: "400",),
+          CupWidget(cupImage: "assets/images/500ml.png", water: "500",),
 
-        padding: const EdgeInsets.all(12),
+          // Image.asset(
+          //   "assets/images/200ml.png",
+          //   width: 25,
+          //   height: 25,
+          // ),
 
 
+        ]);
+  }
+}
 
-    children: <Widget>[
-      Image.asset("assets/images/100ml.png", ),
-        Text("100ml", style:
-        TextStyle(),),
-      SizedBox(
-        height: 20.0,
+
+class CupWidget extends StatelessWidget {
+
+  final String cupImage;
+  final String water;
+
+
+  CupWidget({this.cupImage, this.water});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: (){
+
+        //TODO: add to total drank water
+      },
+      child: Column(
+        children: [
+          Image.asset(
+            cupImage,
+            width: 100,
+            height: 100,
+          ),
+          SizedBox(height: 10,),
+          Text('$water ML'),
+        ],
       ),
-      Image.asset("assets/images/200ml.png", ),
-      Text("200ml", style:
-      TextStyle(),),
-      SizedBox(
-        height: 20.0,
-      ),
-
-      Image.asset("assets/images/300ml.png", ),
-      Text("300ml", style:
-      TextStyle(),),
-      SizedBox(
-        height: 20.0,
-      ),
-
-
-
-
-
-
-
-
-
-    ]
-
-
-
     );
   }
 }
+

@@ -12,6 +12,7 @@ class _SettingsState extends State<Settings> {
   TimeOfDay Time;
   NumberPicker integerNumberPicker;
 
+
   final List<String> _items = [
     '10',
     '11',
@@ -237,7 +238,7 @@ class _SettingsState extends State<Settings> {
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
               trailing: Icon(Icons.keyboard_arrow_down),
-              onTap: _pickTime,
+              onTap: _pickTime2,
             ),
 
 
@@ -291,6 +292,18 @@ class _SettingsState extends State<Settings> {
       });
     }
   }
+
+  _pickTime2() async {
+    TimeOfDay time = await showTimePicker(context: context, initialTime: Time);
+
+    if (Time != null) {
+      setState(() {
+        Time = Time;
+      });
+    }
+  }
+
+
 
 
 }

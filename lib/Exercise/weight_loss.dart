@@ -56,8 +56,8 @@ class WeightLoss extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     child: Container(
-                      height: 50,
-                      color: Colors.white,
+                      height: 100,
+                      color: Colors.orangeAccent,
                       child: const Center(child: Text('WALKING HIGH KNEES ', style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
@@ -78,8 +78,8 @@ class WeightLoss extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     child: Container(
-                      height: 50,
-                      color: Colors.white,
+                      height: 100,
+                      color: Colors.orangeAccent,
                       child: const Center(child: Text('HAMSTRING SWEEPS', style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 25,

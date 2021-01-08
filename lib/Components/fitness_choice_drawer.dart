@@ -1,5 +1,5 @@
 
-import 'package:fitness_choice/Screens/login_screen.dart';
+import 'package:fitness_choice/Screens/steps_tracker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,6 +34,18 @@ class FitnessChoiceDrawer extends StatelessWidget {
 
           ),
 
+          // ListTile(
+          //   title: Text('Steps Tracker'),
+          //   onTap: (){
+          //     Navigator.push(
+          //         context,
+          //       MaterialPageRoute(builder: (context) => MyApp()),
+          //
+          //     );
+          //   },
+          //   leading: Icon(Icons.directions_walk),
+          //
+          // ),
 
 
 
