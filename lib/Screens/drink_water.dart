@@ -1,10 +1,8 @@
-import 'dart:async';
 import 'package:fitness_choice/Components/cups_page.dart';
 import 'package:fitness_choice/Screens/drink_homePage.dart';
 import 'package:fitness_choice/Screens/notifications.dart';
 import 'package:fitness_choice/Screens/settings_page.dart';
 import 'package:flutter/material.dart';
-
 
 class DrinkWater extends StatefulWidget {
   DrinkWater({Key key}) : super(key: key);
@@ -14,7 +12,6 @@ class DrinkWater extends StatefulWidget {
 }
 
 class _DrinkWaterState extends State<DrinkWater> {
-
   @override
   int _selectedIndex = 1;
 
@@ -22,8 +19,6 @@ class _DrinkWaterState extends State<DrinkWater> {
     CupPage(),
     DrinkHomePage(),
     Notifications(),
-
-
   ];
 
   void _onItemTapped(int index) {
@@ -34,8 +29,6 @@ class _DrinkWaterState extends State<DrinkWater> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Drink Water"),
@@ -51,11 +44,7 @@ class _DrinkWaterState extends State<DrinkWater> {
           )
         ],
       ),
-
-
-     body: _widgetOptions.elementAt(_selectedIndex),
-
-
+      body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

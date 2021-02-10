@@ -73,7 +73,7 @@ class CalculatorBrain {
         break;
       case "OVERWEIGHT":
         return TextStyle(
-          color: Color.fromRGBO(241,188,49, 1),
+          color: Color.fromRGBO(241, 188, 49, 1),
           fontWeight: FontWeight.w700,
           letterSpacing: 2.0,
           fontSize: 22.0,
@@ -81,7 +81,7 @@ class CalculatorBrain {
         break;
       case "OBESE Class 1 \n(Moderately obese)":
         return TextStyle(
-          color: Color.fromRGBO(226,88,34, 1),
+          color: Color.fromRGBO(226, 88, 34, 1),
           fontWeight: FontWeight.w700,
           letterSpacing: 2.0,
           fontSize: 22.0,
@@ -89,7 +89,7 @@ class CalculatorBrain {
         break;
       case "OBESE Class 2 \n(Severely obese)":
         return TextStyle(
-          color: Color.fromRGBO(178,34,34, 1),
+          color: Color.fromRGBO(178, 34, 34, 1),
           fontWeight: FontWeight.w700,
           letterSpacing: 2.0,
           fontSize: 22.0,
@@ -97,7 +97,7 @@ class CalculatorBrain {
         break;
       case "OBESE Class 3 \n(Very Severely obese)":
         return TextStyle(
-          color: Color.fromRGBO(124,10,2, 1),
+          color: Color.fromRGBO(124, 10, 2, 1),
           fontWeight: FontWeight.w700,
           letterSpacing: 2.0,
           fontSize: 22.0,

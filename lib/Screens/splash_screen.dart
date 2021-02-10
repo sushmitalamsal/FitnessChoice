@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,11 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   goToAnotherScreen() {
-
-    if(email.isEmpty) {
+    if (email.isEmpty) {
       Navigator.pushReplacementNamed(context, "background");
-
-    }else{
+    } else {
       Navigator.pushReplacementNamed(context, "home");
     }
   }
@@ -41,32 +40,31 @@ class _SplashScreenState extends State<SplashScreen> {
     getEmail();
     startTime();
   }
+
   @override
   Widget build(BuildContext context) {
-    Provider.of<DrinkWaterProvider>(context, listen: false).fetchDrankWaterDetail();
+    Provider.of<DrinkWaterProvider>(context, listen: false)
+        .fetchDrankWaterDetail();
     return Scaffold(
       body: Stack(
-        children: <Widget> [
+        children: <Widget>[
           Shimmer.fromColors(
               child: Center(
-                  child: Text("Fitness Choice",
-                    style: GoogleFonts.pacifico(
-                    textStyle: TextStyle(fontSize: 40,
-
-                      shadows: [BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 2.0,
-                        spreadRadius: 5.0,
-                      )
-                      ]
-                    )
-                    ),)),
+                  child: Text(
+                "Fitness Choice",
+                style: GoogleFonts.pacifico(
+                    textStyle: TextStyle(fontSize: 40, shadows: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 2.0,
+                    spreadRadius: 5.0,
+                  )
+                ])),
+              )),
               baseColor: Color(0xff193566),
-              highlightColor: Color(0xffd90368)
-          ),
+              highlightColor: Color(0xffd90368)),
         ],
       ),
     );
   }
 }
-

@@ -1,7 +1,7 @@
 import 'package:fitness_choice/HomePage.dart';
 import 'package:fitness_choice/Screens/ketogenic_diet.dart';
+import 'package:fitness_choice/Screens/vegan_diet.dart';
 import 'package:flutter/material.dart';
-
 
 class Diet extends StatefulWidget {
   @override
@@ -15,13 +15,10 @@ class _DietState extends State<Diet> {
     'Weight Gain',
     'Weight Loss',
     'Dash diet',
-
-
   ];
 
- // double _targetCalories = 2250;
+  // double _targetCalories = 2250;
   String _diet = 'Ketogenic';
-
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +26,8 @@ class _DietState extends State<Diet> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(("assets/images/dietplan.png"),
-
+            image: AssetImage(
+              ("assets/images/dietplan.png"),
             ),
             fit: BoxFit.cover,
           ),
@@ -114,8 +111,8 @@ class _DietState extends State<Diet> {
                     }).toList(),
                     decoration: InputDecoration(
                       labelText: 'Diet',
-                      labelStyle: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-
+                      labelStyle: TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
                     ),
                     onChanged: (value) {
                       setState(() {
@@ -143,34 +140,22 @@ class _DietState extends State<Diet> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  onPressed: (){
-                    if( _diet== 'Ketogenic'){
-                      Navigator.push(context,
-                      MaterialPageRoute(
-                       builder: (context) => KetogenicDiet()));
-
-                    }
-                    else if( _diet== 'Vegan'){
-                      Navigator.push(context,
+                  onPressed: () {
+                    if (_diet == 'Ketogenic') {
+                      Navigator.push(
+                          context,
                           MaterialPageRoute(
-                              builder: (context) => HomePage()));
-
-                    }
-
-                    else if( _diet== 'Weight Loss'){
+                              builder: (context) => KetogenicDiet()));
+                    } else if (_diet == 'Vegan') {
                       Navigator.push(context,
-                          MaterialPageRoute(
-                              builder: (context) => HomePage()));
-
-                    }
-
-                    else if( _diet== 'Weight Gain'){
+                          MaterialPageRoute(builder: (context) => VeganDiet()));
+                    } else if (_diet == 'Weight Loss') {
                       Navigator.push(context,
-                          MaterialPageRoute(
-                              builder: (context) => HomePage()));
-
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    } else if (_diet == 'Weight Gain') {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     }
-
                   },
                 ),
               ],

@@ -6,27 +6,39 @@ class DrinkWaterProvider extends ChangeNotifier {
 
   DateTime storedDate;
 
+  int userSelectedCup = 200;
+
+
+
   void fetchDrankWaterDetail() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     drankWater = prefs.getInt('drankWater') ?? 0;
     int timestamp = prefs.getInt('storedDate');
     if (timestamp != null) {
       storedDate = DateTime.fromMillisecondsSinceEpoch(timestamp);
-      if (DateTime.now() != storedDate) {
+      DateTime now = new DateTime.now();
+      DateTime currentDate = DateTime(now.year, now.month, now.day);
+      if (currentDate != storedDate) {
         drankWater = 0;
       }
-    } else{
+    } else {
       storedDate = DateTime.now();
     }
+    print(storedDate);
     notifyListeners();
   }
 
-  void storeDrankWaterDetail(int water) async {
-    drankWater += water;
+  void updateSelectedCup(int ml){
+    userSelectedCup = ml;
+  }
+
+  void storeDrankWaterDetail() async {
+    drankWater += userSelectedCup;
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('drankWater', water);
-    int timestamp = storedDate.millisecondsSinceEpoch;
-    prefs.setInt('storedDate', timestamp);
+    await prefs.setInt('drankWater', drankWater);
+    DateTime now = new DateTime.now();
+    int timestamp = DateTime(now.year, now.month, now.day).millisecondsSinceEpoch;
+    await prefs.setInt('storedDate', timestamp);
     notifyListeners();
   }
 }

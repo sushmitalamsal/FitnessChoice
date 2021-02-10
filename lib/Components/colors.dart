@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const kBottomContainerHeight = 80.0;
 const kActiveCardColour = Color(0xFF1D1E33);
@@ -42,11 +41,3 @@ const kBodyTextStyle = TextStyle(
 );
 
 //constants
-
-
-
-
-
-
-
-

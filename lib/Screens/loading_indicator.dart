@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 void onLoading(BuildContext context) {
   showDialog(
     context: context,
@@ -21,7 +20,7 @@ Widget customCupertinoActivityIndicator(bool isLight) {
           child: CupertinoActivityIndicator(
             radius: 20,
           ))
-    // child:  CupertinoActivityIndicator(
-    //   radius: SizeConfig.imageSizeMultiplier * 10,),
-  );
+      // child:  CupertinoActivityIndicator(
+      //   radius: SizeConfig.imageSizeMultiplier * 10,),
+      );
 }

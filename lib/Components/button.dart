@@ -1,7 +1,6 @@
 import 'package:fitness_choice/Components/colors.dart';
 import 'package:flutter/material.dart';
 
-
 class Button extends StatelessWidget {
   Button({@required this.onTap, @required this.buttonTitle});
 

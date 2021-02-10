@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gender_selection/gender_selection.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -10,8 +9,6 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   DateTime pickedDate;
   TimeOfDay Time;
-  NumberPicker integerNumberPicker;
-
 
   final List<String> _items = [
     '10',
@@ -167,8 +164,6 @@ class _SettingsState extends State<Settings> {
   }
 
   Widget build(BuildContext context) {
-    // _initializeNumberPickers();
-
     final dropdownMenuOptions = _items
         .map((String item) =>
             new DropdownMenuItem<String>(value: item, child: new Text(item)))
@@ -238,18 +233,20 @@ class _SettingsState extends State<Settings> {
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
               trailing: Icon(Icons.keyboard_arrow_down),
-              onTap: _pickTime2,
+              onTap: _pickTime,
             ),
-
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-
                 Padding(
                   padding: const EdgeInsets.all(12),
-                  child: Text('Current Weight',style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),),
+                  child: Text(
+                    'Current Weight',
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 DropdownButton<String>(
                     value: _selection,
@@ -267,7 +264,6 @@ class _SettingsState extends State<Settings> {
       ),
     );
   }
-
 
   _pickDate() async {
     DateTime date = await showDatePicker(
@@ -292,18 +288,4 @@ class _SettingsState extends State<Settings> {
       });
     }
   }
-
-  _pickTime2() async {
-    TimeOfDay time = await showTimePicker(context: context, initialTime: Time);
-
-    if (Time != null) {
-      setState(() {
-        Time = Time;
-      });
-    }
-  }
-
-
-
-
 }

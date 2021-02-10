@@ -1,9 +1,8 @@
-
+import 'package:fitness_choice/Screens/dark_mode.dart';
 import 'package:fitness_choice/Screens/steps_tracker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 class FitnessChoiceDrawer extends StatelessWidget {
   const FitnessChoiceDrawer({
@@ -16,7 +15,8 @@ class FitnessChoiceDrawer extends StatelessWidget {
       elevation: 1.5,
       child: ListView(
         children: [
-          DrawerHeader(child: Text(""),
+          DrawerHeader(
+            child: Text(""),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/logo.png"),
@@ -27,27 +27,27 @@ class FitnessChoiceDrawer extends StatelessWidget {
 
           ListTile(
             title: Text('Dark Mode'),
-            onTap: (){
-              Navigator.pop(context);
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DarkMode()),
+              );
             },
             leading: Icon(Icons.nightlight_round),
-
           ),
 
-          // ListTile(
-          //   title: Text('Steps Tracker'),
-          //   onTap: (){
-          //     Navigator.push(
-          //         context,
-          //       MaterialPageRoute(builder: (context) => MyApp()),
-          //
-          //     );
-          //   },
-          //   leading: Icon(Icons.directions_walk),
-          //
-          // ),
+          ListTile(
+            title: Text('Steps Tracker'),
+            onTap: (){
+              Navigator.push(
+                  context,
+                MaterialPageRoute(builder: (context) => StepTrackerScreen()),
 
+              );
+            },
+            leading: Icon(Icons.directions_walk),
 
+          ),
 
           ListTile(
             title: Text('Home '),
@@ -59,26 +59,23 @@ class FitnessChoiceDrawer extends StatelessWidget {
 
           ListTile(
             title: Text('Profile'),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             leading: Icon(Icons.account_circle_rounded),
           ),
 
-
-
           ListTile(
             title: Text('About Us'),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             leading: Icon(Icons.account_box_outlined),
-
           ),
 
           ListTile(
             title: Text('Terms and condition'),
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             leading: Icon(Icons.book),
@@ -87,20 +84,14 @@ class FitnessChoiceDrawer extends StatelessWidget {
           ListTile(
             title: Text('Logout'),
             onTap: () async {
-
-            logout(context);
-
+              logout(context);
             },
             leading: Icon(Icons.logout),
           ),
-
-
         ],
       ),
     );
-
   }
-
 
   void logout(BuildContext context) {
     // set up the buttons

@@ -6,7 +6,7 @@ class WaterLevel extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Water Level"),
-        backgroundColor:Color(0xFF21BFBD),
+        backgroundColor: Color(0xFF21BFBD),
       ),
     );
   }

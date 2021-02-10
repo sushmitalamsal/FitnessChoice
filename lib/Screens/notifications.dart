@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
 
-
 class Notifications extends StatefulWidget {
   @override
   _NotificationsState createState() => _NotificationsState();
 }
 
 class _NotificationsState extends State<Notifications> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-
-
               Text(
                 "Notifications",
                 style: TextStyle(
@@ -61,7 +55,6 @@ class _NotificationsState extends State<Notifications> {
                               fontSize: 20.0,
                             ),
                           ),
-
                         ],
                       ),
                       Divider(
@@ -89,10 +82,7 @@ class _NotificationsState extends State<Notifications> {
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Container(
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width,
+                    width: MediaQuery.of(context).size.width,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
@@ -114,8 +104,6 @@ class _NotificationsState extends State<Notifications> {
                           color: Colors.grey,
                         ),
                         Text("Bed Time", style: TextStyle(fontSize: 20.0)),
-
-
                       ],
                     ),
                   ),
@@ -128,5 +116,3 @@ class _NotificationsState extends State<Notifications> {
     );
   }
 }
-
-

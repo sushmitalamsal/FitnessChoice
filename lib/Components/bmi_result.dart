@@ -3,12 +3,11 @@ import 'package:fitness_choice/Components/colors.dart';
 import 'package:fitness_choice/Components/custom_card.dart';
 import 'package:flutter/material.dart';
 
-
 class ResultPage extends StatelessWidget {
   ResultPage(
       {@required this.interpretation,
-        @required this.bmiResult,
-        @required this.resultText});
+      @required this.bmiResult,
+      @required this.resultText});
 
   final String bmiResult;
   final String resultText;
@@ -62,7 +61,6 @@ class ResultPage extends StatelessWidget {
           ),
           Button(
             buttonTitle: 'RE-CALCULATE',
-
             onTap: () {
               Navigator.pop(context);
             },

@@ -10,5 +10,4 @@ class AboutUs extends StatelessWidget {
       ),
     );
   }
-
 }

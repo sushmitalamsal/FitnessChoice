@@ -24,198 +24,179 @@ class KetogenicDiet extends StatelessWidget {
             SizedBox(
               height: 20.0,
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 child: Container(
                   height: 50,
                   color: Colors.white,
-                  child: const Center(child: Text('Introduction', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),)),
-
+                  child: const Center(
+                      child: Text(
+                    'Introduction',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
-
-                onTap: (){
-                  Navigator.push(context,
+                onTap: () {
+                  Navigator.push(
+                      context,
                       MaterialPageRoute(
                           builder: (context) => KetoIntroduction()));
                 },
               ),
             ),
-
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 child: Container(
                   height: 50,
                   color: Colors.white,
-                  child: const Center(child: Text('Sunday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),)),
-
-                ),
-
-                onTap: (){
-                  Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => KetoSunday()));
-                },
-              ),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  child: Container(
-                    height: 50,
-                    color: Colors.white,
-                    child: const Center(child: Text('Monday', style: TextStyle(
+                  child: const Center(
+                      child: Text(
+                    'Sunday',
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
-
-                    ),)),
-                  ),
-
-                  onTap: (){
-                    Navigator.push(context,
-                        MaterialPageRoute(
-                            builder: (context) => KetoMonday()));
-                  },
-
-
+                    ),
+                  )),
                 ),
-              ),
-
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(child: Text('Tuesday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),)),
-
-                ),
-
-                onTap: (){
+                onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => KetoTuesay()));
-                },
-
-
-              ),
-            ),
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(child: Text('Wednesday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),)),
-
-                ),
-
-
-
-              onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(
-                        builder: (context) => KetoWednesday()));
-              },
-
-              ),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(child: Text('Thursday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),)),
-
-                ),
-
-                onTap: (){
-                  Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => KetoThursday()));
-                },
-
-
-              ),
-            ),
-
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(child: Text('Friday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-
-                  ),)),
-
-                ),
-
-                onTap: (){
-                  Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => KetoFriday()));
+                      MaterialPageRoute(builder: (context) => KetoSunday()));
                 },
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 child: Container(
                   height: 50,
                   color: Colors.white,
-                  child: const Center(child: Text('Saturday', style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-
-                  ),)),
-
+                  child: const Center(
+                      child: Text(
+                    'Monday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
-                onTap: (){
+                onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => KetoWednesday()));
+                      MaterialPageRoute(builder: (context) => KetoMonday()));
                 },
               ),
             ),
-
-
-
-        ],
-    ),
-    ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                    'Tuesday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => KetoTuesay()));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                    'Wednesday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => KetoWednesday()));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                    'Thursday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => KetoThursday()));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                    'Friday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => KetoFriday()));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                    'Saturday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => KetoWednesday()));
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
     );
-
-
   }
 }
-

@@ -9,7 +9,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 enum Gender {
   male,
   female,
@@ -38,53 +37,51 @@ class _BmiCalculatorState extends State<BmiCalculator> {
         children: <Widget>[
           Expanded(
               child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: CustomCard(
-                      onPress: () {
-                        setState(() {
-                          selectedGender = Gender.male;
-                        });
-                      },
-                      colour: selectedGender == Gender.male
-                          ? kActiveCardColour
-                          : kInactiveCardColour,
-                      cardChild: IconContent(
-                        icon: FontAwesomeIcons.mars,
-                        label: 'MALE',
-                      ),
-                    ),
+            children: <Widget>[
+              Expanded(
+                child: CustomCard(
+                  onPress: () {
+                    setState(() {
+                      selectedGender = Gender.male;
+                    });
+                  },
+                  colour: selectedGender == Gender.male
+                      ? kActiveCardColour
+                      : kInactiveCardColour,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.mars,
+                    label: 'MALE',
                   ),
-                  Expanded(
-                    child: CustomCard(
-                      onPress: () {
-                        setState(() {
-                          selectedGender = Gender.female;
-                        });
-                      },
-                      colour: selectedGender == Gender.female
-                          ? kActiveCardColour
-                          : kInactiveCardColour,
-                      cardChild: IconContent(
-                        icon: FontAwesomeIcons.venus,
-                        label: 'FEMALE',
-                      ),
-                    ),
+                ),
+              ),
+              Expanded(
+                child: CustomCard(
+                  onPress: () {
+                    setState(() {
+                      selectedGender = Gender.female;
+                    });
+                  },
+                  colour: selectedGender == Gender.female
+                      ? kActiveCardColour
+                      : kInactiveCardColour,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
-                ],
-              )),
+                ),
+              ),
+            ],
+          )),
           Expanded(
             child: CustomCard(
               colour: Colors.white,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'HEIGHT',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    )
-                  ),
+                  Text('HEIGHT',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
@@ -94,12 +91,10 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
-                        'cm',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )
-                      )
+                      Text('cm',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ))
                     ],
                   ),
                   SliderTheme(
@@ -109,9 +104,9 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                       thumbColor: Color(0xFFEB1555),
                       overlayColor: Color(0x29EB1555),
                       thumbShape:
-                      RoundSliderThumbShape(enabledThumbRadius: 15.0),
+                          RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                      RoundSliderOverlayShape(overlayRadius: 30.0),
+                          RoundSliderOverlayShape(overlayRadius: 30.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -143,7 +138,6 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           ),
-
                         ),
                         Text(
                           weight.toString(),
@@ -200,7 +194,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(
-                                      () {
+                                  () {
                                     age--;
                                   },
                                 );
@@ -227,10 +221,9 @@ class _BmiCalculatorState extends State<BmiCalculator> {
           ),
           Button(
             buttonTitle: 'CALCULATE',
-
             onTap: () {
               CalculatorBrain calc =
-              CalculatorBrain(height: height, weight: weight);
+                  CalculatorBrain(height: height, weight: weight);
 
               Navigator.push(
                 context,

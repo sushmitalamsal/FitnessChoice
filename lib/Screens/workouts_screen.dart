@@ -7,7 +7,7 @@ class Workouts extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Workouts"),
-          backgroundColor:Color(0xFF21BFBD),
+          backgroundColor: Color(0xFF21BFBD),
         ),
         body: Container(
           height: MediaQuery.of(context).size.height - 50.0,
@@ -24,23 +24,21 @@ class Workouts extends StatelessWidget {
                 child: Expanded(
                   child: ListView(
                     children: <Widget>[
-                      Items("Home Workouts \n\n 7 Mins . 36 Calories ", "assets/images/weightloss.png", context,
-                          WEIGHT_LOSS),
-                      Items("Fat Burner", "assets/images/subu.png",
-                          context, FAT_BURNER),
+                      Items("Home Workouts \n\n 7 Mins . 36 Calories ",
+                          "assets/images/weightloss.png", context, WEIGHT_LOSS),
+                      Items("Fat Burner", "assets/images/subu.png", context,
+                          FAT_BURNER),
                       Items("For Abs", "assets/images/yoga.jpg", context,
                           WORKOUTS_SCREEN),
-                      Items("For Triceps", "assets/images/water.jpg",
-                          context, DRINKWATER_SCREEN),
+                      Items("For Triceps", "assets/images/water.jpg", context,
+                          DRINKWATER_SCREEN),
                     ],
                   ),
                 ),
               ),
             ],
           ),
-        )
-
-    );
+        ));
   }
 
   Items(String title, String imgPath, BuildContext context, String pageName) {
@@ -70,9 +68,9 @@ class Workouts extends StatelessWidget {
                   margin: EdgeInsets.all(20),
                   child: Image(
                     image: AssetImage(imgPath),
-                    fit:  BoxFit.cover,
-                    height:170,
-                    width:200,
+                    fit: BoxFit.cover,
+                    height: 170,
+                    width: 200,
                   ),
                 ),
               ),
@@ -82,7 +80,10 @@ class Workouts extends StatelessWidget {
               Center(
                 child: Text(
                   title,
-                  style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
                 ),
               )
             ],
@@ -92,4 +93,3 @@ class Workouts extends StatelessWidget {
     );
   }
 }
-
