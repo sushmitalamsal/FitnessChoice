@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fitness_choice/provider/drink_water_provider.dart';
+import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -45,6 +46,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     Provider.of<DrinkWaterProvider>(context, listen: false)
         .fetchDrankWaterDetail();
+    Provider.of<UserInfoProvider>(context, listen: false)
+        .getInfo();
     return Scaffold(
       body: Stack(
         children: <Widget>[

@@ -47,10 +47,11 @@ dependencies:
   flutter_countdown_timer: ^1.1.0
   after_layout: ^1.0.7+2
   audioplayers: ^0.15.1
-#  pedometer: ^0.0.5
   percent_indicator: ^2.1.1
   timer_builder: ^1.3.0
   pedometer: ^2.0.2
+  flutter_launcher_icons: ^0.8.1
+  flutter_khalti: ^1.0.0
 
 
 
@@ -63,6 +64,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/bmi.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

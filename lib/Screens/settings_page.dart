@@ -1,5 +1,9 @@
+import 'package:day_night_time_picker/day_night_time_picker.dart';
+import 'package:day_night_time_picker/lib/constants.dart';
+import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gender_selection/gender_selection.dart';
+import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -8,7 +12,7 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   DateTime pickedDate;
-  TimeOfDay Time;
+  TimeOfDay time;
 
   final List<String> _items = [
     '10',
@@ -155,12 +159,20 @@ class _SettingsState extends State<Settings> {
   ].toList();
   String _selection;
 
+
+  TimeOfDay _wakeupTime = TimeOfDay.now().replacing(minute: 30);
+  TimeOfDay _bedTime = TimeOfDay.now().replacing(minute: 30);
+  bool iosStyle = true;
+
+  Gender gender;
+
+
   @override
   void initState() {
     super.initState();
     _selection = _items.first;
     pickedDate = DateTime.now();
-    Time = TimeOfDay.now();
+    time = TimeOfDay.now();
   }
 
   Widget build(BuildContext context) {
@@ -181,8 +193,9 @@ class _SettingsState extends State<Settings> {
               isCircular: false,
               selectedGenderIconBackgroundColor: Colors.indigo,
               //linearGradient: skyBlueGradient,
-              onChanged: (Gender gender) {
-                print(gender);
+              onChanged: (Gender g) {
+                this.gender = g;
+                print(g.toString());
               },
             ),
             SizedBox(height: 30.0),
@@ -209,31 +222,39 @@ class _SettingsState extends State<Settings> {
             //     // Navigator.push(context, MaterialPageRoute(builder: (context) => BedTime()));
             //   },
             // ),
-            ListTile(
-              title: Text(
-                "Date: ${pickedDate.year}, ${pickedDate.month}, ${pickedDate.day}",
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-              ),
-              trailing: Icon(Icons.keyboard_arrow_down),
-              onTap: _pickDate,
+            // ListTile(
+            //   title: Text(
+            //     "Date: ${pickedDate.year}, ${pickedDate.month}, ${pickedDate.day}",
+            //     style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            //   ),
+            //   trailing: Icon(Icons.keyboard_arrow_down),
+            //   onTap: _pickDate,
+            // ),
+
+            Text('Wakeup Time:', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+
+            createInlinePicker(
+              elevation: 1,
+              value: _wakeupTime,
+              onChange: onWakeUpTimeChanged,
+              minuteInterval: MinuteInterval.FIVE,
+              iosStylePicker: iosStyle,
+              minMinute: 5,
+              maxMinute: 55,
             ),
 
-            ListTile(
-              title: Text(
-                "Wake Up Time: ${Time.hour}: ${Time.minute}",
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-              ),
-              trailing: Icon(Icons.keyboard_arrow_down),
-              onTap: _pickTime,
-            ),
+            Text('Bed Time:', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), ),
 
-            ListTile(
-              title: Text(
-                "Bed Time: ${Time.hour}: ${Time.minute}",
-                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-              ),
-              trailing: Icon(Icons.keyboard_arrow_down),
-              onTap: _pickTime,
+            createInlinePicker(
+              elevation: 1,
+              cancelText: '',
+              okText: '',
+              value: _bedTime,
+              onChange: onBedTimeChanged,
+              minuteInterval: MinuteInterval.FIVE,
+              iosStylePicker: iosStyle,
+              minMinute: 5,
+              maxMinute: 55,
             ),
 
             Row(
@@ -259,33 +280,32 @@ class _SettingsState extends State<Settings> {
                 // Center(child: integerNumberPicker),
               ],
             ),
+
+            RaisedButton(onPressed: (){
+              saveSetting();
+            }, child: Text('Save', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),), )
           ],
         ),
       ),
     );
   }
 
-  _pickDate() async {
-    DateTime date = await showDatePicker(
-        context: context,
-        initialDate: pickedDate,
-        firstDate: DateTime(DateTime.now().year - 5),
-        lastDate: DateTime(DateTime.now().year + 5));
-
-    if (date != null) {
-      setState(() {
-        pickedDate = date;
-      });
-    }
+  void onWakeUpTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _wakeupTime = newTime;
+    });
+  }
+  void onBedTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _bedTime = newTime;
+    });
   }
 
-  _pickTime() async {
-    TimeOfDay time = await showTimePicker(context: context, initialTime: Time);
 
-    if (Time != null) {
-      setState(() {
-        Time = Time;
-      });
-    }
+  void saveSetting(){
+    String selectedGender = gender.toString().replaceAll('Gender.', '');
+    String wakeUpTime = '${_wakeupTime.hour}:${_wakeupTime.minute}';
+    String bedTime = '${_bedTime.hour}:${_bedTime.minute}';
+    Provider.of<UserInfoProvider>(context, listen: false).storeInfo(wakeUpTime: wakeUpTime, bedTime: bedTime, gender: selectedGender, weight: _selection);
   }
 }

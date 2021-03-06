@@ -1,4 +1,5 @@
 import 'package:fitness_choice/Screens/dark_mode.dart';
+import 'package:fitness_choice/Screens/donation_page.dart';
 import 'package:fitness_choice/Screens/steps_tracker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -80,6 +81,18 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.book),
           ),
+
+          ListTile(
+            title: Text('Donate'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DonationScreen()),
+              );
+            },
+            leading: Icon(Icons.nightlight_round),
+          ),
+
 
           ListTile(
             title: Text('Logout'),

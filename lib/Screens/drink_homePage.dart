@@ -63,6 +63,7 @@ class _DrinkHomePageState extends State<DrinkHomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(children: [
                     Text(
+
                       '$drankWater ml',
                       style: TextStyle(fontSize: 25),
                     ),

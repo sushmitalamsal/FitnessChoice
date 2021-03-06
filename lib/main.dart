@@ -11,8 +11,11 @@ import 'package:fitness_choice/Screens/steps_tracker.dart';
 import 'package:fitness_choice/Screens/workouts_screen.dart';
 import 'package:fitness_choice/contants/urls.dart';
 import 'package:fitness_choice/provider/drink_water_provider.dart';
+import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'Screens/test_screen.dart';
 
 void main() {
   runApp(
@@ -20,6 +23,9 @@ void main() {
       providers: [
         ChangeNotifierProvider.value(
           value: DrinkWaterProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: UserInfoProvider(),
         ),
       ],
       child: MaterialApp(

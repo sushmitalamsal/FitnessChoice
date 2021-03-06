@@ -1,4 +1,7 @@
+import 'package:fitness_choice/Screens/remainder_sound.dart';
+import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Notifications extends StatefulWidget {
   @override
@@ -6,8 +9,25 @@ class Notifications extends StatefulWidget {
 }
 
 class _NotificationsState extends State<Notifications> {
+
+
+  String gender;
+  String wakeuptime;
+  String bedtime;
+  String weight;
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    gender = Provider.of<UserInfoProvider>(context, listen: true).gender;
+    wakeuptime = Provider.of<UserInfoProvider>(context, listen: true).wakeUpTime;
+    bedtime = Provider.of<UserInfoProvider>(context, listen: true).bedTime;
+    weight = Provider.of<UserInfoProvider>(context, listen: true).weight;
+
+
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -49,14 +69,38 @@ class _NotificationsState extends State<Notifications> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text(
+                          FlatButton(
+                            child: Text(
                             "Remainder Sound",
                             style: TextStyle(
                               fontSize: 20.0,
                             ),
                           ),
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => RemainderSound()));
+
+                            },
+                          ),
                         ],
-                      ),
+                            ),
+
+
+
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: <Widget>[
+                      //     Text("Don't have an account?"),
+                      //     FlatButton(
+                      //       child: Text("Signup"),
+                      //       onPressed: () {
+                      //         Navigator.push(
+                      //             context,
+                      //             MaterialPageRoute(
+                      //                 builder: (context) => SignupScreen()));
+                      //       },
+                      //     )
+                      //   ],
+                      // )
                       Divider(
                         height: 30.0,
                         color: Colors.grey,
@@ -86,24 +130,49 @@ class _NotificationsState extends State<Notifications> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Gender", style: TextStyle(fontSize: 20.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Gender", style: TextStyle(fontSize: 20.0)),
+                            Text("$gender", style: TextStyle(fontSize: 20.0)),
+                          ],
+                        ),
                         // SizedBox(height: 10.0,),
                         Divider(
                           height: 30.0,
                           color: Colors.grey,
                         ),
-                        Text("Weight", style: TextStyle(fontSize: 20.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Weight", style: TextStyle(fontSize: 20.0)),
+                            Text("$weight", style: TextStyle(fontSize: 20.0)),
+                          ],
+                        ),
                         // SizedBox(height: 10.0,),
                         Divider(
                           height: 30.0,
                           color: Colors.grey,
                         ),
-                        Text("Wakeup Time", style: TextStyle(fontSize: 20.0)),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Wakeup Time", style: TextStyle(fontSize: 20.0)),
+                            Text("$wakeuptime", style: TextStyle(fontSize: 20.0)),
+
+                          ],
+                        ),
                         Divider(
                           height: 30.0,
                           color: Colors.grey,
                         ),
-                        Text("Bed Time", style: TextStyle(fontSize: 20.0)),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Bed Time", style: TextStyle(fontSize: 20.0)),
+                            Text("$bedtime", style: TextStyle(fontSize: 20.0)),
+                          ],
+                        ),
                       ],
                     ),
                   ),
