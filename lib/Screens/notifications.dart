@@ -55,7 +55,7 @@ class _NotificationsState extends State<Notifications> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            "Remainder Schedule",
+                            "Reminder Page",
                             style: TextStyle(
                               fontSize: 20.0,
                             ),

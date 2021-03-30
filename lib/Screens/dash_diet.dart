@@ -1,3 +1,4 @@
+import 'package:fitness_choice/Screens/dash_introduction.dart';
 import 'package:fitness_choice/Screens/vegan_introduction.dart';
 import 'package:fitness_choice/Weeks/keto_friday.dart';
 import 'package:fitness_choice/Weeks/keto_saturday.dart';
@@ -8,12 +9,12 @@ import 'package:fitness_choice/Weeks/vegan_monday.dart';
 import 'package:fitness_choice/Weeks/vegan_sunday.dart';
 import 'package:flutter/material.dart';
 
-class VeganDiet extends StatelessWidget {
+class DashDiet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vegan Diet"),
+        title: Text("Dash Diet"),
         backgroundColor: Color(0xFF21BFBD),
       ),
       body: Padding(
@@ -21,7 +22,7 @@ class VeganDiet extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(2.0),
           children: <Widget>[
-            Image.asset("assets/images/vegan.png"),
+            Image.asset("assets/images/dash.png"),
             SizedBox(
               height: 20.0,
             ),
@@ -33,18 +34,18 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Introduction',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Introduction',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => VeganIntroduction()));
+                          builder: (context) => DashIntroduction()));
                 },
               ),
             ),
@@ -56,16 +57,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Sunday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Sunday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => VeganSunday()));
+                      MaterialPageRoute(builder: (context) => DashSunday()));
                 },
               ),
             ),
@@ -77,16 +78,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Monday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Monday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => VeganMonday()));
+                      MaterialPageRoute(builder: (context) => DashMonday()));
                 },
               ),
             ),
@@ -98,16 +99,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Tuesday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Tuesday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => KetoTuesay()));
+                      MaterialPageRoute(builder: (context) => DashTuesday()));
                 },
               ),
             ),
@@ -119,16 +120,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Wednesday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Wednesday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => KetoWednesday()));
+                      MaterialPageRoute(builder: (context) => DashWednesday()));
                 },
               ),
             ),
@@ -140,16 +141,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Thursday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Thursday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => KetoThursday()));
+                      MaterialPageRoute(builder: (context) => DashThursday()));
                 },
               ),
             ),
@@ -161,16 +162,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Friday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Friday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => KetoFriday()));
+                      MaterialPageRoute(builder: (context) => DashFriday()));
                 },
               ),
             ),
@@ -182,16 +183,16 @@ class VeganDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                    'Saturday',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  )),
+                        'Saturday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => KetoSaturday()));
+                      MaterialPageRoute(builder: (context) => DashSaturday()));
                 },
               ),
             ),

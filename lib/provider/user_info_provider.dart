@@ -27,6 +27,7 @@ class UserInfoProvider extends ChangeNotifier{
   }
 
 
+
   void getInfo() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //Return String

@@ -83,7 +83,7 @@ class _DonationScreenState extends State<DonationScreen> {
 
     KhaltiProduct product = KhaltiProduct(
       id: "test",
-      // amount: amount,
+      amount: amount,
       name: "Hello Product",
     );
 

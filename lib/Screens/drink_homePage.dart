@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:fitness_choice/provider/drink_water_provider.dart';
+import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:provider/provider.dart';
+
+
 
 class DrinkHomePage extends StatefulWidget {
   DrinkHomePage({Key key}) : super(key: key);
@@ -12,6 +15,12 @@ class DrinkHomePage extends StatefulWidget {
 }
 
 class _DrinkHomePageState extends State<DrinkHomePage> {
+
+  int dividedvalue;
+
+double todivide;
+  //
+  var weight;
   double _height;
   double _width;
   double percent = 0.0;
@@ -34,12 +43,23 @@ class _DrinkHomePageState extends State<DrinkHomePage> {
     super.initState();
   }
 
+
+
   Widget build(BuildContext context) {
+  // todivide = dividedvalue/30;
+    weight = ((int.parse(Provider.of<UserInfoProvider>(context, listen: true).weight))/30)*1000 ;
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
+  //  dividedvalue = (weight/30);
+
+   // dividedvalue = int.parse(Provider.of<UserInfoProvider>(context, listen: true).weight);
+
 
     drankWater = Provider.of<DrinkWaterProvider>(context).drankWater;
     return Scaffold(
+      appBar: AppBar(
+      title: Text("$weight")
+      ),
         body: Column(
       children: [
         Container(

@@ -4,6 +4,7 @@ import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:locally/locally.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
@@ -13,7 +14,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState  extends State<SplashScreen>{
   String email = " ";
   startTime() async {
     var duration = new Duration(seconds: 5);
@@ -27,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacementNamed(context, "home");
     }
   }
+ 
 
   getEmail() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -40,7 +42,18 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     getEmail();
     startTime();
+    Locally locally = Locally(
+      context: context,
+      payload: 'test',
+      //pageRoute: MaterialPageRoute(builder: (context) => ReminderPage(title: title.text, message: message.text)),
+      appIcon: 'mipmap/ic_launcher', 
+    );
+    locally.schedule(
+        title: "Notificaion",
+        message: "Do exercise.");
+
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -70,4 +83,5 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
     );
   }
+
 }
