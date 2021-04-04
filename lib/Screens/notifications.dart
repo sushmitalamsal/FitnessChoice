@@ -9,24 +9,18 @@ class Notifications extends StatefulWidget {
 }
 
 class _NotificationsState extends State<Notifications> {
-
-
   String gender;
   String wakeuptime;
   String bedtime;
   String weight;
 
-
-
   @override
   Widget build(BuildContext context) {
-
     gender = Provider.of<UserInfoProvider>(context, listen: true).gender;
-    wakeuptime = Provider.of<UserInfoProvider>(context, listen: true).wakeUpTime;
+    wakeuptime =
+        Provider.of<UserInfoProvider>(context, listen: true).wakeUpTime;
     bedtime = Provider.of<UserInfoProvider>(context, listen: true).bedTime;
     weight = Provider.of<UserInfoProvider>(context, listen: true).weight;
-
-
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -71,20 +65,20 @@ class _NotificationsState extends State<Notifications> {
                         children: <Widget>[
                           FlatButton(
                             child: Text(
-                            "Remainder Sound",
-                            style: TextStyle(
-                              fontSize: 20.0,
+                              "Remainder Sound",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ),
                             ),
-                          ),
-                            onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => RemainderSound()));
-
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RemainderSound()));
                             },
                           ),
                         ],
-                            ),
-
-
+                      ),
 
                       // Row(
                       //   mainAxisAlignment: MainAxisAlignment.center,
@@ -155,11 +149,12 @@ class _NotificationsState extends State<Notifications> {
                           color: Colors.grey,
                         ),
                         Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Wakeup Time", style: TextStyle(fontSize: 20.0)),
-                            Text("$wakeuptime", style: TextStyle(fontSize: 20.0)),
-
+                            Text("Wakeup Time",
+                                style: TextStyle(fontSize: 20.0)),
+                            Text("$wakeuptime",
+                                style: TextStyle(fontSize: 20.0)),
                           ],
                         ),
                         Divider(
@@ -167,7 +162,7 @@ class _NotificationsState extends State<Notifications> {
                           color: Colors.grey,
                         ),
                         Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text("Bed Time", style: TextStyle(fontSize: 20.0)),
                             Text("$bedtime", style: TextStyle(fontSize: 20.0)),

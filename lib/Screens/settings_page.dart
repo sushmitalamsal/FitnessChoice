@@ -159,21 +159,11 @@ class _SettingsState extends State<Settings> {
   ].toList();
   String _selection;
 
-
   TimeOfDay _wakeupTime = TimeOfDay.now().replacing(minute: 30);
   TimeOfDay _bedTime = TimeOfDay.now().replacing(minute: 30);
   bool iosStyle = true;
 
   Gender gender;
-
-
-  @override
-  void initState() {
-    super.initState();
-    _selection = _items.first;
-    pickedDate = DateTime.now();
-    time = TimeOfDay.now();
-  }
 
   Widget build(BuildContext context) {
     final dropdownMenuOptions = _items
@@ -231,7 +221,10 @@ class _SettingsState extends State<Settings> {
             //   onTap: _pickDate,
             // ),
 
-            Text('Wakeup Time:', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
+            Text(
+              'Wakeup Time:',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
 
             createInlinePicker(
               elevation: 1,
@@ -243,7 +236,10 @@ class _SettingsState extends State<Settings> {
               maxMinute: 55,
             ),
 
-            Text('Bed Time:', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold), ),
+            Text(
+              'Bed Time:',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
 
             createInlinePicker(
               elevation: 1,
@@ -281,13 +277,33 @@ class _SettingsState extends State<Settings> {
               ],
             ),
 
-            RaisedButton(onPressed: (){
-              saveSetting();
-            }, child: Text('Save', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),), )
+            RaisedButton(
+              onPressed: () {
+                saveSetting();
+              },
+              child: Text(
+                'Save',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            )
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _selection = _items.first;
+    pickedDate = DateTime.now();
+    time = TimeOfDay.now();
+  }
+
+  void onBedTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _bedTime = newTime;
+    });
   }
 
   void onWakeUpTimeChanged(TimeOfDay newTime) {
@@ -295,17 +311,15 @@ class _SettingsState extends State<Settings> {
       _wakeupTime = newTime;
     });
   }
-  void onBedTimeChanged(TimeOfDay newTime) {
-    setState(() {
-      _bedTime = newTime;
-    });
-  }
 
-
-  void saveSetting(){
+  void saveSetting() {
     String selectedGender = gender.toString().replaceAll('Gender.', '');
     String wakeUpTime = '${_wakeupTime.hour}:${_wakeupTime.minute}';
     String bedTime = '${_bedTime.hour}:${_bedTime.minute}';
-    Provider.of<UserInfoProvider>(context, listen: false).storeInfo(wakeUpTime: wakeUpTime, bedTime: bedTime, gender: selectedGender, weight: _selection);
+    Provider.of<UserInfoProvider>(context, listen: false).storeInfo(
+        wakeUpTime: wakeUpTime,
+        bedTime: bedTime,
+        gender: selectedGender,
+        weight: _selection);
   }
 }

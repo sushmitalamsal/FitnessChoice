@@ -14,61 +14,12 @@ class _StepTrackerScreenState extends State<StepTrackerScreen> {
   String _status = '?', _steps = '?';
 
   @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  void onStepCount(StepCount event) {
-    print(event);
-    setState(() {
-      _steps = event.steps.toString();
-    });
-  }
-
-  void onPedestrianStatusChanged(PedestrianStatus event) {
-    print(event);
-    setState(() {
-      _status = event.status;
-    });
-  }
-
-  void onPedestrianStatusError(error) {
-    print('onPedestrianStatusError: $error');
-    setState(() {
-      _status = 'Pedestrian Status not available';
-    });
-    print(_status);
-  }
-
-  void onStepCountError(error) {
-    print('onStepCountError: $error');
-    setState(() {
-      _steps = 'Step Count not available';
-    });
-  }
-
-  void initPlatformState() {
-    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    _pedestrianStatusStream
-        .listen(onPedestrianStatusChanged)
-        .onError(onPedestrianStatusError);
-
-    _stepCountStream = Pedometer.stepCountStream;
-    _stepCountStream.listen(onStepCount).onError(onStepCountError);
-
-    if (!mounted) return;
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-
         body: Center(
           child: Column(
-
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
@@ -109,5 +60,52 @@ class _StepTrackerScreenState extends State<StepTrackerScreen> {
         ),
       ),
     );
+  }
+
+  void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
+
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    print(event);
+    setState(() {
+      _status = event.status;
+    });
+  }
+
+  void onPedestrianStatusError(error) {
+    print('onPedestrianStatusError: $error');
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+    print(_status);
+  }
+
+  void onStepCount(StepCount event) {
+    print(event);
+    setState(() {
+      _steps = event.steps.toString();
+    });
+  }
+
+  void onStepCountError(error) {
+    print('onStepCountError: $error');
+    setState(() {
+      _steps = 'Step Count not available';
+    });
   }
 }

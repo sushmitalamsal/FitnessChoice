@@ -31,12 +31,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Introduction',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Introduction',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -54,12 +54,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Sunday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Sunday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -75,12 +75,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Monday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Monday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -96,12 +96,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Tuesday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Tuesday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -117,12 +117,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Wednesday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Wednesday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(context,
@@ -138,12 +138,12 @@ class DashDiet extends StatelessWidget {
                   color: Colors.white,
                   child: const Center(
                       child: Text(
-                        'Thursday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                    'Thursday',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  )),
                 ),
                 onTap: () {
                   Navigator.push(context,

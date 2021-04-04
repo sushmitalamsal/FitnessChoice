@@ -137,12 +137,12 @@ class WeightLoss extends StatelessWidget {
                       color: Colors.black26,
                       child: const Center(
                           child: Text(
-                            'PLANK WITH SHOULDER TAPS',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                            ),
-                          )),
+                        'PLANK WITH SHOULDER TAPS',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
                     ),
                     onTap: () {
                       Navigator.push(

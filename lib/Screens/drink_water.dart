@@ -21,12 +21,6 @@ class _DrinkWaterState extends State<DrinkWater> {
     Notifications(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,5 +62,11 @@ class _DrinkWaterState extends State<DrinkWater> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }

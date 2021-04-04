@@ -12,24 +12,6 @@ class _HomeState extends State<Home> {
   TimeOfDay _wakeuptime = TimeOfDay();
   TimeOfDay _bedtime = TimeOfDay();
 
-  void onTimeChanged(TimeOfDay newTime) {
-    setState(() {
-      _time = newTime;
-    });
-  }
-
-  void onWakeUpTimeChanged(TimeOfDay newTime) {
-    setState(() {
-      _time = newTime;
-    });
-  }
-
-  void onBedTimeChanged(TimeOfDay newTime) {
-    setState(() {
-      _time = newTime;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,5 +40,23 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  void onBedTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _time = newTime;
+    });
+  }
+
+  void onTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _time = newTime;
+    });
+  }
+
+  void onWakeUpTimeChanged(TimeOfDay newTime) {
+    setState(() {
+      _time = newTime;
+    });
   }
 }

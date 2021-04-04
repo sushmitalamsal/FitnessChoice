@@ -42,7 +42,7 @@ class PlankWithShoulderTaps extends StatelessWidget {
                             Text(
                               "1. Start in a plank position, with your wrists under your shoulders and your feet hip width apart. \n \n"
                               " 2. Touch your left shoulder with your right hand and return to plank position. \n \n"
-                                  "3. Touch your right shoulder with your left hand and continue alternating sides until the set is complete. \n \n ",
+                              "3. Touch your right shoulder with your left hand and continue alternating sides until the set is complete. \n \n ",
                               style: TextStyle(
                                 fontSize: 20,
                               ),

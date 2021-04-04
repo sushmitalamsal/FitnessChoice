@@ -214,13 +214,75 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
         ));
   }
 
-  Widget signupForm(){
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    usernameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  Widget makeInput({label, obscureText = false}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          label,
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        TextField(
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey[400])),
+            border: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey[400])),
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+      ],
+    );
+  }
+
+  register() async {
+    onLoading(context);
+    var url = "$REGISTER_URL?name=$name&email=$email&password=$password";
+    var response = await http.get(url);
+    // print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    if (response.body.contains("Registration Successful")) {
+      saveEmail();
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else {
+      _showSnackBar("Something is wrong");
+    }
+  }
+
+  saveEmail() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', email);
+    print(email);
+  }
+
+  Widget signupForm() {
     return Form(
       key: _formkey,
       autovalidateMode: _autovalidate,
       child: Column(
         children: [
-
           TextFormField(
             validator: validateName,
             controller: usernameController,
@@ -281,8 +343,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
                       : Icons.visibility_off),
                   onPressed: () {
                     setState(() {
-                      _obscureConfirmPassword =
-                      !_obscureConfirmPassword;
+                      _obscureConfirmPassword = !_obscureConfirmPassword;
                     });
                   },
                 ),
@@ -294,70 +355,6 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
         ],
       ),
     );
-  }
-
-
-  Widget makeInput({label, obscureText = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          label,
-          style: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        TextField(
-          obscureText: obscureText,
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[400])),
-            border: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey[400])),
-          ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-      ],
-    );
-  }
-
-  saveEmail() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('email', email);
-    print(email);
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    usernameController.dispose();
-    emailController.dispose();
-    passwordController.dispose();
-    confirmPasswordController.dispose();
-    super.dispose();
-  }
-
-  register() async {
-    onLoading(context);
-    var url = "$REGISTER_URL?name=$name&email=$email&password=$password";
-    var response = await http.get(url);
-    // print('Response status: ${response.statusCode}');
-    print('Response body: ${response.body}');
-    if (response.body.contains("Registration Successful")) {
-      saveEmail();
-
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } else {
-      _showSnackBar("Something is wrong");
-    }
   }
 
   void _showSnackBar(String message) {

@@ -25,7 +25,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
               // color: Colors.pinkAccent
             ),
           ),
-
           ListTile(
             title: Text('Dark Mode'),
             onTap: () {
@@ -36,20 +35,16 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.nightlight_round),
           ),
-
           ListTile(
             title: Text('Steps Tracker'),
-            onTap: (){
+            onTap: () {
               Navigator.push(
-                  context,
+                context,
                 MaterialPageRoute(builder: (context) => StepTrackerScreen()),
-
               );
             },
             leading: Icon(Icons.directions_walk),
-
           ),
-
           ListTile(
             title: Text('Home '),
             onTap: () {
@@ -57,7 +52,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.home),
           ),
-
           ListTile(
             title: Text('Profile'),
             onTap: () {
@@ -65,7 +59,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.account_circle_rounded),
           ),
-
           ListTile(
             title: Text('About Us'),
             onTap: () {
@@ -76,7 +69,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.nightlight_round),
           ),
-
           ListTile(
             title: Text('Terms and condition'),
             onTap: () {
@@ -84,7 +76,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.book),
           ),
-
           ListTile(
             title: Text('Donate'),
             onTap: () {
@@ -95,14 +86,33 @@ class FitnessChoiceDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.nightlight_round),
           ),
-
-
           ListTile(
             title: Text('Logout'),
             onTap: () async {
               logout(context);
             },
             leading: Icon(Icons.logout),
+          ),
+        ],
+      ),
+    );
+  }
+
+  CustomListTile({IconData icon, String text}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5.0),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 15.0,
+          ),
+          Text(
+            "$text",
+            style: TextStyle(fontSize: 16.0),
           ),
         ],
       ),
@@ -158,26 +168,5 @@ class FitnessChoiceDrawer extends StatelessWidget {
 
     //show the dialog
     showDialog(context: context, builder: (BuildContext context) => dialog);
-  }
-
-  CustomListTile({IconData icon, String text}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 5.0),
-      child: Row(
-        children: <Widget>[
-          Icon(
-            icon,
-            color: Colors.black,
-          ),
-          SizedBox(
-            width: 15.0,
-          ),
-          Text(
-            "$text",
-            style: TextStyle(fontSize: 16.0),
-          ),
-        ],
-      ),
-    );
   }
 }

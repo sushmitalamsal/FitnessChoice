@@ -54,7 +54,8 @@ class CupWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         //TODO: add to total drank water
-        Provider.of<DrinkWaterProvider>(context, listen:false).updateSelectedCup(int.parse(water));
+        Provider.of<DrinkWaterProvider>(context, listen: false)
+            .updateSelectedCup(int.parse(water));
       },
       child: Column(
         children: [

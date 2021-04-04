@@ -1,8 +1,9 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
-import 'package:fitness_choice/models/water_notification.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:fitness_choice/contants/urls.dart';
+import 'package:fitness_choice/models/water_notification.dart';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class NotificationProvider extends ChangeNotifier {
   WaterNotification notification;

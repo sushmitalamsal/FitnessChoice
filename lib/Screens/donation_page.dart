@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_khalti/flutter_khalti.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DonationScreen extends StatefulWidget {
   @override
@@ -36,8 +36,7 @@ class _DonationScreenState extends State<DonationScreen> {
               Text(
                 'Amount you want to donate:',
                 //bleeding usually lasts between 4-7days
-                style:
-                TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 5),
               Container(
@@ -64,11 +63,9 @@ class _DonationScreenState extends State<DonationScreen> {
                 label: Text("Donate via Khalti."),
               )
             ]),
-          )
-      ),
+          )),
     );
   }
-
 
   void openKhalti() {
     var donation = donationController.text;

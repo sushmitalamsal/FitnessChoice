@@ -8,8 +8,6 @@ class DrinkWaterProvider extends ChangeNotifier {
 
   int userSelectedCup = 200;
 
-
-
   void fetchDrankWaterDetail() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     drankWater = prefs.getInt('drankWater') ?? 0;
@@ -28,17 +26,18 @@ class DrinkWaterProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateSelectedCup(int ml){
-    userSelectedCup = ml;
-  }
-
   void storeDrankWaterDetail() async {
     drankWater += userSelectedCup;
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setInt('drankWater', drankWater);
     DateTime now = new DateTime.now();
-    int timestamp = DateTime(now.year, now.month, now.day).millisecondsSinceEpoch;
+    int timestamp =
+        DateTime(now.year, now.month, now.day).millisecondsSinceEpoch;
     await prefs.setInt('storedDate', timestamp);
     notifyListeners();
+  }
+
+  void updateSelectedCup(int ml) {
+    userSelectedCup = ml;
   }
 }

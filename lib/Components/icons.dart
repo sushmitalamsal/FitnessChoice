@@ -2,10 +2,11 @@ import 'package:fitness_choice/Components/colors.dart';
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
-  IconContent({this.icon, this.label});
-
   final IconData icon;
+
   final String label;
+
+  IconContent({this.icon, this.label});
 
   @override
   Widget build(BuildContext context) {

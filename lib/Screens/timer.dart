@@ -1,8 +1,19 @@
+import 'dart:async';
+
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:timer_builder/timer_builder.dart';
-import 'dart:async';
+
+String formatDuration(Duration d) {
+  String f(int n) {
+    return n.toString().padLeft(2, '0');
+  }
+
+  // We want to round up the remaining time to the nearest second
+  d += Duration(microseconds: 999999);
+  return "${f(d.inMinutes)}:${f(d.inSeconds % 60)}";
+}
 
 class TimerScreen extends StatefulWidget {
   @override
@@ -16,36 +27,6 @@ class TimerState extends State<TimerScreen> {
 
   AudioCache audioCache = AudioCache();
   AudioPlayer advancedPlayer = AudioPlayer();
-
-  @override
-  void initState() {
-    super.initState();
-    alert = DateTime.now().add(Duration(seconds: 10));
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    advancedPlayer.dispose();
-  }
-
-  startTime() async {
-    var duration = new Duration(seconds: 10);
-    return new Timer(duration, stopPlayingAudio());
-  }
-
-  stopPlayingAudio() {
-    Future.delayed(const Duration(seconds: 10), () {
-      advancedPlayer.stop();
-    });
-  }
-
-  startPlayingAudio() async {
-    advancedPlayer =
-        await audioCache.loop('audio/audio1.mp3', mode: PlayerMode.LOW_LATENCY);
-    stopPlayingAudio();
-    // startTime();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,14 +83,34 @@ class TimerState extends State<TimerScreen> {
       theme: ThemeData(backgroundColor: Colors.white),
     );
   }
-}
 
-String formatDuration(Duration d) {
-  String f(int n) {
-    return n.toString().padLeft(2, '0');
+  @override
+  void dispose() {
+    super.dispose();
+    advancedPlayer.dispose();
   }
 
-  // We want to round up the remaining time to the nearest second
-  d += Duration(microseconds: 999999);
-  return "${f(d.inMinutes)}:${f(d.inSeconds % 60)}";
+  @override
+  void initState() {
+    super.initState();
+    alert = DateTime.now().add(Duration(seconds: 10));
+  }
+
+  startPlayingAudio() async {
+    advancedPlayer =
+        await audioCache.loop('audio/audio1.mp3', mode: PlayerMode.LOW_LATENCY);
+    stopPlayingAudio();
+    // startTime();
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 10);
+    return new Timer(duration, stopPlayingAudio());
+  }
+
+  stopPlayingAudio() {
+    Future.delayed(const Duration(seconds: 10), () {
+      advancedPlayer.stop();
+    });
+  }
 }

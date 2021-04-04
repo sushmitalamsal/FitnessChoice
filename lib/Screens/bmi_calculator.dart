@@ -9,14 +9,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-enum Gender {
-  male,
-  female,
-}
-
 class BmiCalculator extends StatefulWidget {
   @override
   _BmiCalculatorState createState() => _BmiCalculatorState();
+}
+
+enum Gender {
+  male,
+  female,
 }
 
 class _BmiCalculatorState extends State<BmiCalculator> {

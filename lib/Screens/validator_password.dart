@@ -1,13 +1,15 @@
 class ValidationMixin {
-  String validateName(String value) {
-    String pattern = r'(^[a-zA-Z ]*$)';
+  String validateEmail(String value) {
+    String pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     RegExp regExp = new RegExp(pattern);
     if (value.length == 0) {
-      return 'Name is Required';
+      return 'Email is Required';
     } else if (!regExp.hasMatch(value.trim())) {
-      return 'Name must be a-z and A-Z';
+      return 'Invalid Email';
+    } else {
+      return null;
     }
-    return null;
   }
 
   String validateMobile(String value) {
@@ -23,6 +25,17 @@ class ValidationMixin {
     return null;
   }
 
+  String validateName(String value) {
+    String pattern = r'(^[a-zA-Z ]*$)';
+    RegExp regExp = new RegExp(pattern);
+    if (value.length == 0) {
+      return 'Name is Required';
+    } else if (!regExp.hasMatch(value.trim())) {
+      return 'Name must be a-z and A-Z';
+    }
+    return null;
+  }
+
   String validatePassword(String value) {
     if (value.length == 0) {
       return 'Password can\'t be empty';
@@ -30,18 +43,5 @@ class ValidationMixin {
       return 'Password must be longer than 6 characters';
     }
     return null;
-  }
-
-  String validateEmail(String value) {
-    String pattern =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regExp = new RegExp(pattern);
-    if (value.length == 0) {
-      return 'Email is Required';
-    } else if (!regExp.hasMatch(value.trim())) {
-      return 'Invalid Email';
-    } else {
-      return null;
-    }
   }
 }

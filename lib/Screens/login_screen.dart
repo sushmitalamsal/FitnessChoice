@@ -22,10 +22,11 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
   final passwordController = TextEditingController();
 
   final _formkey = GlobalKey<FormState>();
-  AutovalidateMode _autovalidate= AutovalidateMode.disabled;
+  AutovalidateMode _autovalidate = AutovalidateMode.disabled;
 
   var email = '';
   var password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,8 +143,7 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
                                     //   _showSnackBar(
                                     //       "Invalid email or Password");
                                     // }
-                                  }
-                                  ),
+                                  }),
                             ),
                           ],
                         ),
@@ -193,7 +193,33 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
         ));
   }
 
-  Widget loginForm(){
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  login() async {
+    onLoading(context);
+    var url = "$LOGIN_URL?email=$email&password=$password";
+    var response = await http.get(url);
+    //print('Response status: ${response.statusCode}');
+    // print('Response body: ${response.body}');
+    if (response.body.contains("Login successful")) {
+      saveEmail();
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else {
+      _showSnackBar("Invalid Username or Password Please Try Again");
+    }
+  }
+
+  Widget loginForm() {
     return Form(
       key: _formkey,
       autovalidateMode: _autovalidate,
@@ -203,8 +229,7 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
             controller: emailController,
             validator: validateEmail,
             decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "Email"),
+                border: OutlineInputBorder(), labelText: "Email"),
           ),
           Padding(
             padding: EdgeInsets.only(
@@ -232,7 +257,6 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
               // obscureText: true,
             ),
           ),
-
         ],
       ),
     );
@@ -271,32 +295,6 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('email', email);
     print(email);
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    emailController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
-
-  login() async {
-    onLoading(context);
-    var url = "$LOGIN_URL?email=$email&password=$password";
-    var response = await http.get(url);
-    //print('Response status: ${response.statusCode}');
-    // print('Response body: ${response.body}');
-    if (response.body.contains("Login successful")) {
-      saveEmail();
-
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } else {
-      _showSnackBar("Invalid Username or Password Please Try Again");
-    }
   }
 
   void _showSnackBar(String message) {

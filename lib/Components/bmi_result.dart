@@ -4,14 +4,15 @@ import 'package:fitness_choice/Components/custom_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
+  final String bmiResult;
+
+  final String resultText;
+  final String interpretation;
+
   ResultPage(
       {@required this.interpretation,
       @required this.bmiResult,
       @required this.resultText});
-
-  final String bmiResult;
-  final String resultText;
-  final String interpretation;
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:locally/locally.dart';
+// import 'package:locally/locally.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
@@ -14,53 +14,14 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState  extends State<SplashScreen>{
+class _SplashScreenState extends State<SplashScreen> {
   String email = " ";
-  startTime() async {
-    var duration = new Duration(seconds: 5);
-    return new Timer(duration, goToAnotherScreen);
-  }
-
-  goToAnotherScreen() {
-    if (email.isEmpty) {
-      Navigator.pushReplacementNamed(context, "background");
-    } else {
-      Navigator.pushReplacementNamed(context, "home");
-    }
-  }
- 
-
-  getEmail() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Return String
-    email = prefs.getString('email') ?? "";
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getEmail();
-    startTime();
-    Locally locally = Locally(
-      context: context,
-      payload: 'test',
-      //pageRoute: MaterialPageRoute(builder: (context) => ReminderPage(title: title.text, message: message.text)),
-      appIcon: 'mipmap/ic_launcher', 
-    );
-    locally.schedule(
-        title: "Notificaion",
-        message: "Do exercise.");
-
-  }
-
 
   @override
   Widget build(BuildContext context) {
     Provider.of<DrinkWaterProvider>(context, listen: false)
         .fetchDrankWaterDetail();
-    Provider.of<UserInfoProvider>(context, listen: false)
-        .getInfo();
+    Provider.of<UserInfoProvider>(context, listen: false).getInfo();
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -84,4 +45,37 @@ class _SplashScreenState  extends State<SplashScreen>{
     );
   }
 
+  getEmail() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    //Return String
+    email = prefs.getString('email') ?? "";
+  }
+
+  goToAnotherScreen() {
+    if (email.isEmpty) {
+      Navigator.pushReplacementNamed(context, "background");
+    } else {
+      Navigator.pushReplacementNamed(context, "home");
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getEmail();
+    startTime();
+    // Locally locally = Locally(
+    //   context: context,
+    //   payload: 'test',
+    //pageRoute: MaterialPageRoute(builder: (context) => ReminderPage(title: title.text, message: message.text)),
+    // appIcon: 'mipmap/ic_launcher',
+    // );
+    // locally.schedule(title: "Notificaion", message: "Do exercise.");
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 5);
+    return new Timer(duration, goToAnotherScreen);
+  }
 }
