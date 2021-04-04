@@ -456,11 +456,13 @@ class DashSunday extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Text(
-                              "Calories: 508 kcal \n"
-                                  "Fat: 2g \n"
-                                  "Fiber: 7g \n"
-                                  "Protein: 19g \n"
-                                  "Calcium: 81mg \n ",
+                              "Calories: 454 kcal \n"
+                                  "Fat: 17g \n"
+                                  "Cholesterol: 92mg\n"
+                                  "Protein: 39g \n"
+                                  "Fiber: 7g \n "
+                                  "Sodium: 492mg \n"
+                                  "Calcium: 120mg \n ",
                               style: TextStyle(
                                 fontSize: 20,
                               ),

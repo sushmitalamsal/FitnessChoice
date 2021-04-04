@@ -23,7 +23,7 @@ class _DonationScreenState extends State<DonationScreen> {
             child: Column(children: [
               SizedBox(height: 20),
               Text(
-                'Mahinawari app is also committed for supplying no cost menstrual health products to women that menstruate who are either homeless or low-income. With your donation, we can buy in bulk. Any donation amount is appreciated and goes a long way to purchasing menstrual products.',
+                ' Fitness app is also committed for supplying no cost diet fod  health products to poor people who are either homeless or low-income. With your donation, we can buy in bulk. Any donation amount is appreciated and goes a long way to purchasing any iteam related to health.',
                 style: GoogleFonts.lato(
                   textStyle: TextStyle(
                     color: Colors.black87,

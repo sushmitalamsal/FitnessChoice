@@ -1,6 +1,7 @@
 const String BASE_URL = 'https://prenuptial-dawn.000webhostapp.com/';
 const String REGISTER_URL = "$BASE_URL/register.php";
 const String LOGIN_URL = "$BASE_URL/login.php";
+const String READNOTIFICATION_URL = "$BASE_URL/readNotification.php";
 
 // internal app route name
 const String DIET_SCREEN = 'dietScreen';

@@ -2,6 +2,7 @@ import 'package:fitness_choice/HomePage.dart';
 import 'package:fitness_choice/Screens/FadeAnimation.dart';
 import 'package:fitness_choice/Screens/loading_indicator.dart';
 import 'package:fitness_choice/Screens/login_screen.dart';
+import 'package:fitness_choice/Screens/validator_password.dart';
 import 'package:fitness_choice/contants/urls.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -12,7 +13,7 @@ class SignupScreen extends StatefulWidget {
   _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
+class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
   final _globalKeyScaffold = GlobalKey<ScaffoldState>();
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -21,6 +22,9 @@ class _SignupScreenState extends State<SignupScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+
+  final _formkey = GlobalKey<FormState>();
+  AutovalidateMode _autovalidate = AutovalidateMode.disabled;
 
   var name = '';
   var email = '';
@@ -66,78 +70,78 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ],
                     ),
-                    TextFormField(
-                      controller: usernameController,
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(), labelText: "Username"),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 1.0,
-                      ),
-                      child: TextFormField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(), labelText: "Email"),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 1.0,
-                      ),
-                      child: TextFormField(
-                        //validator: (String value){
-                        // if(value.length<3)
-                        //   return "Enter at least 3 char";
-                        //  else
-                        //    return null;
-                        //  },
-                        controller: passwordController,
-                        obscureText: _obscurePassword,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Password",
-                          suffixIcon: IconButton(
-                            icon: Icon(_obscurePassword
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                _obscurePassword = !_obscurePassword;
-                              });
-                            },
-                          ),
-                        ),
-                        autofocus: false,
-                        // obscureText: true,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                        top: 1.0,
-                      ),
-                      child: TextFormField(
-                        controller: confirmPasswordController,
-                        obscureText: _obscureConfirmPassword,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: " Confirm Password",
-                          suffixIcon: IconButton(
-                            icon: Icon(_obscureConfirmPassword
-                                ? Icons.visibility
-                                : Icons.visibility_off),
-                            onPressed: () {
-                              setState(() {
-                                _obscureConfirmPassword =
-                                    !_obscureConfirmPassword;
-                              });
-                            },
-                          ),
-                        ),
-                        autofocus: false,
-                        // obscureText: true,
-                      ),
-                    ),
+                    // TextFormField(
+                    //   controller: usernameController,
+                    //   decoration: InputDecoration(
+                    //       border: OutlineInputBorder(), labelText: "Username"),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //     top: 1.0,
+                    //   ),
+                    //   child: TextFormField(
+                    //     controller: emailController,
+                    //     decoration: InputDecoration(
+                    //         border: OutlineInputBorder(), labelText: "Email"),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     top: 1.0,
+                    //   ),
+                    //   child: TextFormField(
+                    //     //validator: (String value){
+                    //     // if(value.length<3)
+                    //     //   return "Enter at least 3 char";
+                    //     //  else
+                    //     //    return null;
+                    //     //  },
+                    //     controller: passwordController,
+                    //     obscureText: _obscurePassword,
+                    //     decoration: InputDecoration(
+                    //       border: OutlineInputBorder(),
+                    //       labelText: "Password",
+                    //       suffixIcon: IconButton(
+                    //         icon: Icon(_obscurePassword
+                    //             ? Icons.visibility
+                    //             : Icons.visibility_off),
+                    //         onPressed: () {
+                    //           setState(() {
+                    //             _obscurePassword = !_obscurePassword;
+                    //           });
+                    //         },
+                    //       ),
+                    //     ),
+                    //     autofocus: false,
+                    //     // obscureText: true,
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: EdgeInsets.only(
+                    //     top: 1.0,
+                    //   ),
+                    //   child: TextFormField(
+                    //     controller: confirmPasswordController,
+                    //     obscureText: _obscureConfirmPassword,
+                    //     decoration: InputDecoration(
+                    //       border: OutlineInputBorder(),
+                    //       labelText: " Confirm Password",
+                    //       suffixIcon: IconButton(
+                    //         icon: Icon(_obscureConfirmPassword
+                    //             ? Icons.visibility
+                    //             : Icons.visibility_off),
+                    //         onPressed: () {
+                    //           setState(() {
+                    //             _obscureConfirmPassword =
+                    //                 !_obscureConfirmPassword;
+                    //           });
+                    //         },
+                    //       ),
+                    //     ),
+                    //     autofocus: false,
+                    //     // obscureText: true,
+                    //   ),
+                    // ),
                     Padding(
                       padding: EdgeInsets.only(
                         top: 1.0,
@@ -155,20 +159,21 @@ class _SignupScreenState extends State<SignupScreen> {
                                 fontWeight: FontWeight.w600, fontSize: 18),
                           ),
                           onPressed: () {
-                            name = usernameController.text;
-                            email = emailController.text;
-                            password = passwordController.text;
-                            confirmPassword = confirmPasswordController.text;
-
-                            if (name != "" &&
-                                email != "" &&
-                                password != "" &&
-                                confirmPassword != "" &&
-                                password == confirmPassword) {
-                              register();
-                            } else {
-                              _showSnackBar("Please fill up the form");
-                            }
+                            _validateInputs();
+                            // name = usernameController.text;
+                            // email = emailController.text;
+                            // password = passwordController.text;
+                            // confirmPassword = confirmPasswordController.text;
+                            //
+                            // if (name != "" &&
+                            //     email != "" &&
+                            //     password != "" &&
+                            //     confirmPassword != "" &&
+                            //     password == confirmPassword) {
+                            //   register();
+                            // } else {
+                            //   _showSnackBar("Please fill up the form");
+                            // }
                           }),
                     ),
                     Container(
@@ -208,6 +213,89 @@ class _SignupScreenState extends State<SignupScreen> {
           ),
         ));
   }
+
+  Widget signupForm(){
+    return Form(
+      key: _formkey,
+      autovalidateMode: _autovalidate,
+      child: Column(
+        children: [
+
+          TextFormField(
+            validator: validateName,
+            controller: usernameController,
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), labelText: "Username"),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 1.0,
+            ),
+            child: TextFormField(
+              validator: validateEmail,
+              controller: emailController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(), labelText: "Email"),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 1.0,
+            ),
+            child: TextFormField(
+              validator: validatePassword,
+
+              controller: passwordController,
+              obscureText: _obscurePassword,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "Password",
+                suffixIcon: IconButton(
+                  icon: Icon(_obscurePassword
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      _obscurePassword = !_obscurePassword;
+                    });
+                  },
+                ),
+              ),
+              autofocus: false,
+              // obscureText: true,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 1.0,
+            ),
+            child: TextFormField(
+              controller: confirmPasswordController,
+              obscureText: _obscureConfirmPassword,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: " Confirm Password",
+                suffixIcon: IconButton(
+                  icon: Icon(_obscureConfirmPassword
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      _obscureConfirmPassword =
+                      !_obscureConfirmPassword;
+                    });
+                  },
+                ),
+              ),
+              autofocus: false,
+              // obscureText: true,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Widget makeInput({label, obscureText = false}) {
     return Column(
@@ -275,5 +363,16 @@ class _SignupScreenState extends State<SignupScreen> {
   void _showSnackBar(String message) {
     final _snackBar = SnackBar(content: Text(message));
     _globalKeyScaffold.currentState.showSnackBar(_snackBar);
+  }
+
+  void _validateInputs() {
+    if (_formkey.currentState.validate()) {
+      _formkey.currentState.save();
+      register();
+    } else {
+      setState(() {
+        _autovalidate = AutovalidateMode.always;
+      });
+    }
   }
 }

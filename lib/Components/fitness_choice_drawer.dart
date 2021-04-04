@@ -1,3 +1,4 @@
+import 'package:fitness_choice/Screens/aboutus_screen.dart';
 import 'package:fitness_choice/Screens/dark_mode.dart';
 import 'package:fitness_choice/Screens/donation_page.dart';
 import 'package:fitness_choice/Screens/steps_tracker.dart';
@@ -17,7 +18,6 @@ class FitnessChoiceDrawer extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Text(""),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/logo.png"),
@@ -29,10 +29,10 @@ class FitnessChoiceDrawer extends StatelessWidget {
           ListTile(
             title: Text('Dark Mode'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DarkMode()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => DarkMode()),
+              // );
             },
             leading: Icon(Icons.nightlight_round),
           ),
@@ -69,9 +69,12 @@ class FitnessChoiceDrawer extends StatelessWidget {
           ListTile(
             title: Text('About Us'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutUs()),
+              );
             },
-            leading: Icon(Icons.account_box_outlined),
+            leading: Icon(Icons.nightlight_round),
           ),
 
           ListTile(

@@ -1,12 +1,9 @@
 import 'package:fitness_choice/Screens/dash_introduction.dart';
-import 'package:fitness_choice/Screens/vegan_introduction.dart';
-import 'package:fitness_choice/Weeks/keto_friday.dart';
-import 'package:fitness_choice/Weeks/keto_saturday.dart';
-import 'package:fitness_choice/Weeks/keto_thursday.dart';
-import 'package:fitness_choice/Weeks/keto_tuesday.dart';
-import 'package:fitness_choice/Weeks/keto_wednesday.dart';
-import 'package:fitness_choice/Weeks/vegan_monday.dart';
-import 'package:fitness_choice/Weeks/vegan_sunday.dart';
+import 'package:fitness_choice/Weeks/dash_monday.dart';
+import 'package:fitness_choice/Weeks/dash_sunday.dart';
+import 'package:fitness_choice/Weeks/dash_thursday.dart';
+import 'package:fitness_choice/Weeks/dash_tuesday.dart';
+import 'package:fitness_choice/Weeks/dash_wednesday.dart';
 import 'package:flutter/material.dart';
 
 class DashDiet extends StatelessWidget {
@@ -154,48 +151,48 @@ class DashDiet extends StatelessWidget {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(
-                      child: Text(
-                        'Friday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
-                ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DashFriday()));
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                child: Container(
-                  height: 50,
-                  color: Colors.white,
-                  child: const Center(
-                      child: Text(
-                        'Saturday',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
-                ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DashSaturday()));
-                },
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: InkWell(
+            //     child: Container(
+            //       height: 50,
+            //       color: Colors.white,
+            //       child: const Center(
+            //           child: Text(
+            //             'Friday',
+            //             style: TextStyle(
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 25,
+            //             ),
+            //           )),
+            //     ),
+            //     onTap: () {
+            //       Navigator.push(context,
+            //           MaterialPageRoute(builder: (context) => DashFriday()));
+            //     },
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: InkWell(
+            //     child: Container(
+            //       height: 50,
+            //       color: Colors.white,
+            //       child: const Center(
+            //           child: Text(
+            //             'Saturday',
+            //             style: TextStyle(
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 25,
+            //             ),
+            //           )),
+            //     ),
+            //     onTap: () {
+            //       Navigator.push(context,
+            //           MaterialPageRoute(builder: (context) => DashSaturday()));
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),

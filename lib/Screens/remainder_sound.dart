@@ -1,7 +1,23 @@
+import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-class RemainderSound extends StatelessWidget {
+class RemainderSound extends StatefulWidget {
   @override
+  _RemainderSoundState createState() => _RemainderSoundState();
+}
+
+class _RemainderSoundState extends State<RemainderSound> {
+
+  AudioCache audioCache = AudioCache();
+  AudioPlayer advancedPlayer = AudioPlayer();
+
+  @override
+  void dispose() {
+    super.dispose();
+    advancedPlayer.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +39,6 @@ class RemainderSound extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text("Water Flow", style: TextStyle(fontSize: 20.0)),
-                            
 
 
                             // SizedBox(height: 10.0,),

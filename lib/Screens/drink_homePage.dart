@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fitness_choice/provider/drink_water_provider.dart';
+import 'package:fitness_choice/provider/notification_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
@@ -31,7 +32,7 @@ double todivide;
   void initState() {
     Timer timer;
     timer = Timer.periodic(Duration(milliseconds: 300), (_) {
-      print('Percent Update');
+      //print('Percent Update');
       setState(() {
         percent += 1;
         if (percent >= 100) {
@@ -50,6 +51,8 @@ double todivide;
     weight = ((int.parse(Provider.of<UserInfoProvider>(context, listen: true).weight))/30)*1000 ;
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
+
+    Provider.of<NotificationProvider>(context, listen: false).fetchNotification();
   //  dividedvalue = (weight/30);
 
    // dividedvalue = int.parse(Provider.of<UserInfoProvider>(context, listen: true).weight);
@@ -82,6 +85,7 @@ double todivide;
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(children: [
+                    Text((Provider.of<NotificationProvider>(context, listen: true).notification.message)),
                     Text(
 
                       '$drankWater ml',
