@@ -1,3 +1,4 @@
+import 'package:fitness_choice/Screens/timer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,7 @@ class BicycleCrunches extends StatelessWidget {
                       decoration: BoxDecoration(
                         //border: Border.all(color: Colors.black26),
                         image: DecorationImage(
-                          image: AssetImage("assets/videos/Highknee.png"),
+                          image: AssetImage("assets/videos/bicycle crunches.png"),
                         ),
                       ),
                     ),
@@ -50,7 +51,31 @@ class BicycleCrunches extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ])))
+                  ]))),
+
+              Container(
+                height: 50,
+                margin:
+                EdgeInsets.symmetric(horizontal: 55, vertical: 20),
+                child: FlatButton.icon(
+                    color: Colors.greenAccent[700],
+                    icon: Icon(
+                      Icons.timer,
+                      size: 30,
+                    ),
+                    label: Text(
+                      'Start Workout',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TimerScreen()));
+                    }),
+              ),
         ])));
   }
 }

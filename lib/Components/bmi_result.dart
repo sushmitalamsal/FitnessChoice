@@ -18,8 +18,8 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Result'),
-        backgroundColor: Colors.cyan,
+        title: Text("Result"),
+        backgroundColor: Color(0xFF21BFBD),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

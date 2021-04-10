@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:fitness_choice/provider/drink_water_provider.dart';
-import 'package:fitness_choice/provider/notification_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
@@ -28,7 +26,7 @@ class _DrinkHomePageState extends State<DrinkHomePage> {
   int drankWater = 0;
 
   Widget build(BuildContext context) {
-    // todivide = dividedvalue/30;
+
     weight = ((int.parse(
                 Provider.of<UserInfoProvider>(context, listen: true).weight)) /
             30) *
@@ -36,23 +34,30 @@ class _DrinkHomePageState extends State<DrinkHomePage> {
     _height = MediaQuery.of(context).size.height;
     _width = MediaQuery.of(context).size.width;
 
-    Provider.of<NotificationProvider>(context, listen: false)
-        .fetchNotification();
+   // Provider.of<NotificationProvider>(context, listen: false)
+        //.fetchNotification();
     //  dividedvalue = (weight/30);
 
     // dividedvalue = int.parse(Provider.of<UserInfoProvider>(context, listen: true).weight);
 
     drankWater = Provider.of<DrinkWaterProvider>(context).drankWater;
+
+
     return Scaffold(
-        appBar: AppBar(title: Text("$weight")),
+
+
         body: Column(
           children: [
             Container(
-                height: _height,
                 width: _width,
-                padding: EdgeInsets.all(100),
+                padding: EdgeInsets.all(80),
+
+
                 child: Column(
                   children: [
+                    Text("$weight ml",
+                      style:TextStyle(fontSize: 20)
+                    ),
                     Container(
                         height: 200,
                         width: 200,
@@ -64,13 +69,12 @@ class _DrinkHomePageState extends State<DrinkHomePage> {
                           borderWidth: 2.0,
                           direction: Axis.vertical,
                         )),
+
+
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(children: [
-                        Text((Provider.of<NotificationProvider>(context,
-                                listen: true)
-                            .notification
-                            .message)),
+
                         Text(
                           '$drankWater ml',
                           style: TextStyle(fontSize: 25),

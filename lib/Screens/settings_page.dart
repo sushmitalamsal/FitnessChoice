@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:day_night_time_picker/day_night_time_picker.dart';
 import 'package:day_night_time_picker/lib/constants.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gender_selection/gender_selection.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
@@ -173,7 +176,8 @@ class _SettingsState extends State<Settings> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("DateTime"),
+        title: Text("Setting Page"),
+        backgroundColor: Color(0xFF21BFBD),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -223,7 +227,9 @@ class _SettingsState extends State<Settings> {
 
             Text(
               'Wakeup Time:',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,  ),
+
             ),
 
             createInlinePicker(
@@ -238,7 +244,7 @@ class _SettingsState extends State<Settings> {
 
             Text(
               'Bed Time:',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
 
             createInlinePicker(
@@ -277,19 +283,68 @@ class _SettingsState extends State<Settings> {
               ],
             ),
 
+
             RaisedButton(
-              onPressed: () {
+              onPressed: (){
                 saveSetting();
+                return showDialog(
+                    context: context,
+                  builder: (ctx) => AlertDialog(
+                    content: Text("Your data is successfully saved. "),
+                    actions: <Widget>[
+                      FlatButton(
+
+                        onPressed: (){
+                        Navigator.of(ctx).pop();
+                      },
+                        child: Text("Okay"),
+                      )
+                    ],
+                  )
+                );
               },
-              child: Text(
-                'Save',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50)
               ),
+              child: Text("Save",
+                textAlign: TextAlign.right,
+
+                style: TextStyle(fontSize: 30, color: Colors.green),),
             )
+
+
+            // RaisedButton(
+            //   onPressed: () {
+            //     saveSetting();
+            //   },
+            //   child: MaterialButton(
+            //     minWidth: double.infinity,
+            //     height: 60,
+            //     color: Colors.greenAccent,
+            //     elevation: 0,
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(50)),
+            //     child: Text(
+            //
+            //       "Save",
+            //       style: TextStyle(
+            //           fontWeight: FontWeight.w600, fontSize: 18),
+            //     ),
+            //
+            // )
+            // )
+
+
           ],
+
         ),
+
       ),
+
+
+
     );
+
   }
 
   @override
@@ -322,4 +377,5 @@ class _SettingsState extends State<Settings> {
         gender: selectedGender,
         weight: _selection);
   }
+
 }

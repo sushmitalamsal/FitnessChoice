@@ -9,12 +9,12 @@ import 'package:fitness_choice/Exercise/up_downPlank.dart';
 import 'package:fitness_choice/Exercise/walking_highknees.dart';
 import 'package:flutter/material.dart';
 
-class WeightLoss extends StatelessWidget {
+class FatBurner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Weight Loss"),
+          title: Text("Fat Burner"),
           backgroundColor: Color(0xFF21BFBD),
         ),
         body: Padding(
@@ -29,36 +29,18 @@ class WeightLoss extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 150,
+                    height: 100,
                     color: Colors.white,
                     child: const Center(
                         child: Text(
-                      'If you really need to lose some weight quickly and can not make'
-                      'it to the gym everyday,this is the workout designed for you! \n \n  '
-                         ,
-                      style: TextStyle(
-                        fontSize: 20,
-                        wordSpacing: 2.0,
-                      ),
-                    )),
-                  ),
-                ),
-
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          " BURN UP TO 36 CALORIES ",
+                          'If you really need to lose some weight quickly and can not make'
+                              'it to the gym everyday,this is the workout designed for you! \n \n '
+                              'BURN UP TO 36 CALORIES',
                           style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            wordSpacing: 2.0,
                           ),
-                        )
-                      ],
-                    ),
+                        )),
                   ),
                 ),
 
@@ -88,12 +70,12 @@ class WeightLoss extends StatelessWidget {
                       color: Colors.black26,
                       child: const Center(
                           child: Text(
-                        'WALKING HIGH KNEES ',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                            'WALKING HIGH KNEES ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          )),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -113,12 +95,12 @@ class WeightLoss extends StatelessWidget {
                       color: Colors.black26,
                       child: const Center(
                           child: Text(
-                        'HAMSTRING SWEEPS',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                            'HAMSTRING SWEEPS',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          )),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -137,12 +119,12 @@ class WeightLoss extends StatelessWidget {
                       color: Colors.black26,
                       child: const Center(
                           child: Text(
-                        'PLIE SQUATS',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                            'PLIE SQUATS',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          )),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -161,12 +143,12 @@ class WeightLoss extends StatelessWidget {
                       color: Colors.black26,
                       child: const Center(
                           child: Text(
-                        'PLANK WITH SHOULDER TAPS',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      )),
+                            'PLANK WITH SHOULDER TAPS',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          )),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -300,122 +282,6 @@ class WeightLoss extends StatelessWidget {
 
 
 
-                //
-                //
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: InkWell(
-                //     child: Container(
-                //       height: 50,
-                //       color: Colors.white,
-                //       child: const Center(child: Text('Tuesday', style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 25,
-                //       ),)),
-                //
-                //     ),
-                //
-                //     onTap: (){
-                //       Navigator.push(context,
-                //           MaterialPageRoute(
-                //               builder: (context) => KetoTuesay()));
-                //     },
-                //
-                //
-                //   ),
-                // ),
-                //
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: InkWell(
-                //     child: Container(
-                //       height: 50,
-                //       color: Colors.white,
-                //       child: const Center(child: Text('Wednesday', style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 25,
-                //       ),)),
-                //
-                //     ),
-                //
-                //
-                //
-                //     onTap: (){
-                //       Navigator.push(context,
-                //           MaterialPageRoute(
-                //               builder: (context) => KetoWednesday()));
-                //     },
-                //
-                //   ),
-                // ),
-                //
-                //
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: InkWell(
-                //     child: Container(
-                //       height: 50,
-                //       color: Colors.white,
-                //       child: const Center(child: Text('Thursday', style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 25,
-                //       ),)),
-                //
-                //     ),
-                //
-                //     onTap: (){
-                //       Navigator.push(context,
-                //           MaterialPageRoute(
-                //               builder: (context) => KetoThursday()));
-                //     },
-                //
-                //
-                //   ),
-                // ),
-                //
-                //
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: InkWell(
-                //     child: Container(
-                //       height: 50,
-                //       color: Colors.white,
-                //       child: const Center(child: Text('Friday', style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 25,
-                //
-                //       ),)),
-                //
-                //     ),
-                //
-                //     onTap: (){
-                //       Navigator.push(context,
-                //           MaterialPageRoute(
-                //               builder: (context) => KetoFriday()));
-                //     },
-                //   ),
-                // ),
-                //
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: InkWell(
-                //     child: Container(
-                //       height: 50,
-                //       color: Colors.white,
-                //       child: const Center(child: Text('Saturday', style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         fontSize: 25,
-                //
-                //       ),)),
-                //
-                //     ),
-                //     onTap: (){
-                //       Navigator.push(context,
-                //           MaterialPageRoute(
-                //               builder: (context) => KetoWednesday()));
-                //     },
-                //   ),
-                // ),
               ],
             )));
   }

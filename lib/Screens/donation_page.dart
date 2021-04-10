@@ -15,20 +15,22 @@ class _DonationScreenState extends State<DonationScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: new AppBar(
-            centerTitle: true,
-            title: new Text("Donate Now"),
+          appBar: AppBar(
+            title: Text("Donate Now"),
+            backgroundColor: Color(0xFF21BFBD),
           ),
           body: SingleChildScrollView(
             child: Column(children: [
               SizedBox(height: 20),
               Text(
-                ' Fitness app is also committed for supplying no cost diet fod  health products to poor people who are either homeless or low-income. With your donation, we can buy in bulk. Any donation amount is appreciated and goes a long way to purchasing any iteam related to health.',
+                ' Fitness app is also committed for supplying no cost diet fod  health products to poor people who are either homeless or low-income. '
+                    'With your donation, we can buy in bulk. Any donation amount is appreciated and goes a long way to purchasing any iteam related to health.',
+                textAlign: TextAlign.justify,
                 style: GoogleFonts.lato(
                   textStyle: TextStyle(
                     color: Colors.black87,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w900,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),

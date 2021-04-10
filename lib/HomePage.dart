@@ -39,12 +39,27 @@ class HomePage extends StatelessWidget {
                       children: <Widget>[
                         Padding(
                           padding: const EdgeInsets.only(left: 16.0),
-                          child: IconButton(
-                              icon: Icon(Icons.menu),
-                              onPressed: () {
-                                _scaffoldKey.currentState.openDrawer();
-                              }),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                  icon: Icon(Icons.menu),
+                                  onPressed: () {
+                                    _scaffoldKey.currentState.openDrawer();
+                                  }),
+                              SizedBox(
+                                width: 270,
+                              ),
+                              IconButton(
+                                icon: Icon(Icons.notifications,size: 38,),
+                                onPressed: (){
+                                  Navigator.pushNamed(context, 'noti');
+    }
+                                ,
+                              )
+                            ],
+                          ),
                         ),
+
 
                         // Padding(
                         //   padding: EdgeInsets.only(top: 15.0, left: 10.0),

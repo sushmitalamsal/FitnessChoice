@@ -29,7 +29,7 @@ class PlankWithShoulderTaps extends StatelessWidget {
                       decoration: BoxDecoration(
                         //border: Border.all(color: Colors.black26),
                         image: DecorationImage(
-                          image: AssetImage("assets/videos/plank shoulder.png"),
+                          image: AssetImage("assets/videos/plank with shoulder.png"),
                         ),
                       ),
                     ),

@@ -11,6 +11,7 @@ class NotificationProvider extends ChangeNotifier {
   Future<void> fetchNotification() async {
     notification = WaterNotification();
     var response = await http.get(READNOTIFICATION_URL);
+    print(response);
     if (response.statusCode == 200) {
       var result = json.decode(response.body);
 

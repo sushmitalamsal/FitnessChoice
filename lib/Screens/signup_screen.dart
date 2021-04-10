@@ -142,6 +142,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
                     //     // obscureText: true,
                     //   ),
                     // ),
+                    signupForm(),
                     Padding(
                       padding: EdgeInsets.only(
                         top: 1.0,
@@ -154,6 +155,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50)),
                           child: Text(
+
                             "signup",
                             style: TextStyle(
                                 fontWeight: FontWeight.w600, fontSize: 18),
@@ -195,6 +197,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text("Already have an account?"),
+
                             FlatButton(
                               child: Text("Login"),
                               onPressed: () {
@@ -204,6 +207,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
                                         builder: (context) => LoginScreen()));
                               },
                             )
+
                           ],
                         )),
                   ],
@@ -291,7 +295,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 1.0,
+              top: 10,
             ),
             child: TextFormField(
               validator: validateEmail,
@@ -302,7 +306,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: 1.0,
+              top: 10,
             ),
             child: TextFormField(
               validator: validatePassword,
@@ -329,7 +333,7 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
           ),
           Padding(
             padding: EdgeInsets.only(
-              top: 1.0,
+              top: 10,
             ),
             child: TextFormField(
               controller: confirmPasswordController,

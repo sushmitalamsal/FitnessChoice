@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:fitness_choice/provider/notification_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -22,6 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Provider.of<DrinkWaterProvider>(context, listen: false)
         .fetchDrankWaterDetail();
     Provider.of<UserInfoProvider>(context, listen: false).getInfo();
+    Provider.of<NotificationProvider>(context, listen: false)
+        .fetchNotification();
     return Scaffold(
       body: Stack(
         children: <Widget>[

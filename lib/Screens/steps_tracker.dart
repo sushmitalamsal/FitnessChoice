@@ -18,6 +18,10 @@ class _StepTrackerScreenState extends State<StepTrackerScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Step Tracker"),
+          backgroundColor: Color(0xFF21BFBD),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

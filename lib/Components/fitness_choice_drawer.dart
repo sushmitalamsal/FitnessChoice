@@ -26,72 +26,72 @@ class FitnessChoiceDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Dark Mode'),
+            title: Text('Dark Mode', style: TextStyle(fontSize: 18),),
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => DarkMode()),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DarkMode()),
+              );
             },
-            leading: Icon(Icons.nightlight_round),
+            leading: Icon(Icons.nightlight_round, color: Colors.black26, size: 25,),
           ),
           ListTile(
-            title: Text('Steps Tracker'),
+            title: Text('Steps Tracker', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => StepTrackerScreen()),
               );
             },
-            leading: Icon(Icons.directions_walk),
+            leading: Icon(Icons.directions_walk, color: Colors.cyan,),
           ),
           ListTile(
-            title: Text('Home '),
+            title: Text('Home ', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.pop(context);
             },
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.home, color: Colors.indigo,),
           ),
           ListTile(
-            title: Text('Profile'),
+            title: Text('Profile', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.pop(context);
             },
-            leading: Icon(Icons.account_circle_rounded),
+            leading: Icon(Icons.account_circle_rounded, color: Colors.blue,),
           ),
           ListTile(
-            title: Text('About Us'),
+            title: Text('About Us', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => AboutUs()),
               );
             },
-            leading: Icon(Icons.nightlight_round),
+            leading: Icon(Icons.group, color: Colors.lightBlue, size: 25,),
           ),
           ListTile(
-            title: Text('Terms and condition'),
+            title: Text('Terms and condition', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.pop(context);
             },
-            leading: Icon(Icons.book),
+            leading: Icon(Icons.book, color: Colors.purple,),
           ),
           ListTile(
-            title: Text('Donate'),
+            title: Text('Donate', style: TextStyle(fontSize: 18),),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => DonationScreen()),
               );
             },
-            leading: Icon(Icons.nightlight_round),
+            leading: Icon(Icons.money_off_sharp, color: Colors.green,),
           ),
           ListTile(
-            title: Text('Logout'),
+            title: Text('Logout', style: TextStyle(fontSize: 18),),
             onTap: () async {
               logout(context);
             },
-            leading: Icon(Icons.logout),
+            leading: Icon(Icons.logout, color: Colors.black,),
           ),
         ],
       ),

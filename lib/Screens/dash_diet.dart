@@ -1,5 +1,7 @@
 import 'package:fitness_choice/Screens/dash_introduction.dart';
+import 'package:fitness_choice/Weeks/dash_friday.dart';
 import 'package:fitness_choice/Weeks/dash_monday.dart';
+import 'package:fitness_choice/Weeks/dash_saturday.dart';
 import 'package:fitness_choice/Weeks/dash_sunday.dart';
 import 'package:fitness_choice/Weeks/dash_thursday.dart';
 import 'package:fitness_choice/Weeks/dash_tuesday.dart';
@@ -151,48 +153,48 @@ class DashDiet extends StatelessWidget {
                 },
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: InkWell(
-            //     child: Container(
-            //       height: 50,
-            //       color: Colors.white,
-            //       child: const Center(
-            //           child: Text(
-            //             'Friday',
-            //             style: TextStyle(
-            //               fontWeight: FontWeight.bold,
-            //               fontSize: 25,
-            //             ),
-            //           )),
-            //     ),
-            //     onTap: () {
-            //       Navigator.push(context,
-            //           MaterialPageRoute(builder: (context) => DashFriday()));
-            //     },
-            //   ),
-            // ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: InkWell(
-            //     child: Container(
-            //       height: 50,
-            //       color: Colors.white,
-            //       child: const Center(
-            //           child: Text(
-            //             'Saturday',
-            //             style: TextStyle(
-            //               fontWeight: FontWeight.bold,
-            //               fontSize: 25,
-            //             ),
-            //           )),
-            //     ),
-            //     onTap: () {
-            //       Navigator.push(context,
-            //           MaterialPageRoute(builder: (context) => DashSaturday()));
-            //     },
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                        'Friday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DashFriday()));
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                child: Container(
+                  height: 50,
+                  color: Colors.white,
+                  child: const Center(
+                      child: Text(
+                        'Saturday',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25,
+                        ),
+                      )),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => DashSaturday()));
+                },
+              ),
+            ),
           ],
         ),
       ),

@@ -24,7 +24,7 @@ class Workouts extends StatelessWidget {
                 child: Expanded(
                   child: ListView(
                     children: <Widget>[
-                      Items("Home Workouts \n\n 7 Mins . 36 Calories ",
+                      Items("Home Workouts ",
                           "assets/images/weightloss.png", context, WEIGHT_LOSS),
                       Items("Fat Burner", "assets/images/subu.png", context,
                           FAT_BURNER),
@@ -61,7 +61,7 @@ class Workouts extends StatelessWidget {
             verticalDirection: VerticalDirection.down,
             children: <Widget>[
               SizedBox(
-                height: 40.0,
+                height: 30.0,
               ),
               Center(
                 child: Card(
@@ -69,7 +69,7 @@ class Workouts extends StatelessWidget {
                   child: Image(
                     image: AssetImage(imgPath),
                     fit: BoxFit.cover,
-                    height: 170,
+                    height: 250,
                     width: 200,
                   ),
                 ),

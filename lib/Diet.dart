@@ -1,4 +1,5 @@
 import 'package:fitness_choice/HomePage.dart';
+import 'package:fitness_choice/Screens/dash_diet.dart';
 import 'package:fitness_choice/Screens/ketogenic_diet.dart';
 import 'package:fitness_choice/Screens/vegan_diet.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,7 @@ class _DietState extends State<Diet> {
   List<String> _diets = [
     'Ketogenic',
     'Vegan',
-    'Weight Gain',
-    'Weight Loss',
-    'Dash diet',
+    'Dash Diet',
   ];
 
   // double _targetCalories = 2250;
@@ -23,6 +22,10 @@ class _DietState extends State<Diet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Diet"),
+        backgroundColor: Color(0xFF21BFBD),
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -149,12 +152,12 @@ class _DietState extends State<Diet> {
                     } else if (_diet == 'Vegan') {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => VeganDiet()));
-                    } else if (_diet == 'Weight Loss') {
+                    // } else if (_diet == 'Weight Loss') {
+                    //   Navigator.push(context,
+                    //       MaterialPageRoute(builder: (context) => DashDiet()));
+                    } else if (_diet == 'Dash Diet') {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
-                    } else if (_diet == 'Weight Gain') {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                          MaterialPageRoute(builder: (context) => DashDiet()));
                     }
                   },
                 ),

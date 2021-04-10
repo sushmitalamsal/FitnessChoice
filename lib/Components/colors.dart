@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kActiveCardColour = Color(0xFF1D1E33);
+const kActiveCardColour = Color(0xFF1D1E99);
 const kBMITextStyle = TextStyle(
   fontSize: 100.0,
   fontWeight: FontWeight.bold,
