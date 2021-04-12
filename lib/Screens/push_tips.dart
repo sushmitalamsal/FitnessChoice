@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fitness_choice/provider/notification_provider.dart';
+import 'package:fitness_choice/provider/tips_provider.dart';
 
-class PushNotification extends StatelessWidget {
+class PushTips extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class PushNotification extends StatelessWidget {
         body: Container(
           child: Column(
             children: <Widget>[
-              Text((Provider.of<NotificationProvider>(context,
+              Text((Provider.of<TipsProvider>(context,
                   listen: true)
-                  .notification
+                  .tips
                   .message)),
             ],
           ),

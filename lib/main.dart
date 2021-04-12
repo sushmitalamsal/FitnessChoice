@@ -8,13 +8,13 @@ import 'package:fitness_choice/Screens/drink_water.dart';
 import 'package:fitness_choice/Screens/login_screen.dart';
 import 'package:fitness_choice/Screens/signup_screen.dart';
 import 'package:fitness_choice/Screens/splash_screen.dart';
-import 'package:fitness_choice/Screens/push_notification.dart';
+import 'package:fitness_choice/Screens/push_tips.dart';
 import 'package:fitness_choice/Screens/steps_tracker.dart';
 import 'package:fitness_choice/Screens/workouts_screen.dart';
 import 'package:fitness_choice/contants/urls.dart';
 import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
-import 'package:fitness_choice/provider/notification_provider.dart';
+import 'package:fitness_choice/provider/tips_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,12 +27,15 @@ void main() {
         ChangeNotifierProvider.value(
           value: DrinkWaterProvider(),
         ),
+
         ChangeNotifierProvider.value(
-          value: NotificationProvider(),
+          value: TipsProvider(),
         ),
         ChangeNotifierProvider.value(
           value: UserInfoProvider(),
         ),
+
+
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -45,7 +48,7 @@ void main() {
           'login': (context) => LoginScreen(),
           'signup': (context) => SignupScreen(),
           'home': (context) => HomePage(),
-          'noti':(context) => PushNotification(),
+          'noti':(context) => PushTips(),
           DIET_SCREEN: (context) => Diet(),
           BMI_SCREEN: (context) => BmiCalculator(),
           WORKOUTS_SCREEN: (context) => Workouts(),

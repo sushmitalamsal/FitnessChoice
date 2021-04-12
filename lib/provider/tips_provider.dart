@@ -5,18 +5,21 @@ import 'package:fitness_choice/models/water_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class NotificationProvider extends ChangeNotifier {
-  WaterNotification notification;
+class TipsProvider extends ChangeNotifier {
+  Tips tips;
 
-  Future<void> fetchNotification() async {
-    notification = WaterNotification();
-    var response = await http.get(READNOTIFICATION_URL);
+  Future<void> fetchTips() async {
+    tips = Tips();
+    var url = Uri.parse('$READTIPS_URL');
+    var response = await http.get(url);
+
+
     print(response);
     if (response.statusCode == 200) {
       var result = json.decode(response.body);
 
-      notification = WaterNotification.fromJson(result);
-      print(notification.message);
+      tips = Tips.fromJson(result);
+      print(tips.message);
     }
     notifyListeners();
   }

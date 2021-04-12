@@ -1,10 +1,10 @@
-class WaterNotification {
+class Tips {
   String id;
   String message;
 
-  WaterNotification({this.id, this.message});
+  Tips({this.id, this.message});
 
-  WaterNotification.fromJson(Map<String, dynamic> json) {
+  Tips.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     message = json['message'];
   }

@@ -1,14 +1,12 @@
 import 'dart:async';
-
 import 'package:fitness_choice/provider/drink_water_provider.dart';
 import 'package:fitness_choice/provider/user_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:locally/locally.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:fitness_choice/provider/notification_provider.dart';
+import 'package:fitness_choice/provider/tips_provider.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -23,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Provider.of<DrinkWaterProvider>(context, listen: false)
         .fetchDrankWaterDetail();
     Provider.of<UserInfoProvider>(context, listen: false).getInfo();
-    Provider.of<NotificationProvider>(context, listen: false)
-        .fetchNotification();
+    Provider.of<TipsProvider>(context, listen: false)
+        .fetchTips();
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -56,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   goToAnotherScreen() {
     if (email.isEmpty) {
-      Navigator.pushReplacementNamed(context, "background");
+      Navigator.pushReplacementNamed(context, "background"); //background
     } else {
       Navigator.pushReplacementNamed(context, "home");
     }
@@ -66,15 +64,19 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getEmail();
-    startTime();
-    // Locally locally = Locally(
+    // Locally locally;
+    //
+    // locally = Locally(
     //   context: context,
     //   payload: 'test',
-    //pageRoute: MaterialPageRoute(builder: (context) => ReminderPage(title: title.text, message: message.text)),
-    // appIcon: 'mipmap/ic_launcher',
+    //   pageRoute: MaterialPageRoute(builder: (context) => PushNoti(title: title.text, message: message.text)),
+    //   appIcon: 'mipmap/ic_launcher',
     // );
-    // locally.schedule(title: "Notificaion", message: "Do exercise.");
+    // locally.show(title: "Hello", message: "World");
+
+    getEmail();
+    startTime();
+
   }
 
   startTime() async {

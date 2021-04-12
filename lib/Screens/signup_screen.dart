@@ -259,7 +259,8 @@ class _SignupScreenState extends State<SignupScreen> with ValidationMixin {
 
   register() async {
     onLoading(context);
-    var url = "$REGISTER_URL?name=$name&email=$email&password=$password";
+
+    var url = Uri.parse('$REGISTER_URL?name=$name&email=$email&password=$password');
     var response = await http.get(url);
     // print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');

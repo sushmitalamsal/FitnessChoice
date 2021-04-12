@@ -203,7 +203,10 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
   login() async {
     onLoading(context);
-    var url = "$LOGIN_URL?email=$email&password=$password";
+    email = emailController.text;
+    password = passwordController.text;
+    var url = Uri.parse('$LOGIN_URL?email=$email&password=$password');
+
     var response = await http.get(url);
     //print('Response status: ${response.statusCode}');
     // print('Response body: ${response.body}');

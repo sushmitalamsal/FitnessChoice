@@ -150,6 +150,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                                 icon: FontAwesomeIcons.minus,
                                 onPressed: () {
                                   setState(() {
+
                                     weight--;
                                   });
                                 }),
@@ -160,6 +161,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                               icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
+                                  
                                   weight++;
                                 });
                               },
@@ -190,11 +192,16 @@ class _BmiCalculatorState extends State<BmiCalculator> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+
+
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(
                                   () {
+
+
+
                                     age--;
                                   },
                                 );
